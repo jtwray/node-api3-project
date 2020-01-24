@@ -13,7 +13,7 @@ server.use('/api/users', userRouter);
 server.use('/api/posts', postRouter);
 
 server.get('/', (req, res) => {
-  res.console.log("awesome");
+  console.log("!awesome");
   res.send(`<h2>its up amigo</h2>`).then(_ => console.log("awesome possum¡"));
 });
 
