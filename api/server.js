@@ -27,26 +27,26 @@ server.get('/api', (req, res) => {
   
 <h1>rVenture</h1>
 
-<h2>rventure.herokuapp.com/  ✔ api status</h2>
+<h2>https://rventure.herokuapp.com/  ✔ api status</h2>
 
 <hr>
-<h3>rventure.herokuapp.com/api/ endpoint documentation📃</h3>
+<h3>https://rventure.herokuapp.com/api/ endpoint documentation📃</h3>
 
 <br>
-<h4><code> POST--|rventure.herokuapp.com/auth/rv/register</code>🚎</h4>
-<h4><code> POST--|rventure.herokuapp.com/auth/rv/login</code></h4>
-<h4><code> POST--|rventure.herokuapp.com/auth/landowner/register</code></h4
-<h4><code> POST--|rventure.herokuapp.com/auth/landowner/login</code></h4>
+<h4><code> POST--|https://rventure.herokuapp.com/auth/rv/register</code>🚎</h4>
+<h4><code> POST--|https://rventure.herokuapp.com/auth/rv/login</code></h4>
+<h4><code> POST--|https://rventure.herokuapp.com/auth/landowner/register</code></h4
+<h4><code> POST--|https://rventure.herokuapp.com/auth/landowner/login</code></h4>
 <hr>
-<h4><code> GET---|rventure.herokuapp.com/api/listing</code></h4>
-<h4><code> GET---|rventure.herokuapp.com/api/listing/:id</code></h4>
-<h4><code> POST--|rventure.herokuapp.com/api/listing/:id</code></h4>
-<h4><code>DELETE-|rventure.herokuapp.com/api/listing/:id</code></h4>
+<h4><code> GET---|https://rventure.herokuapp.com/api/listing</code></h4>
+<h4><code> GET---|https://rventure.herokuapp.com/api/listing/:id</code></h4>
+<h4><code> POST--|https://rventure.herokuapp.com/api/listing/:id</code></h4>
+<h4><code>DELETE-|https://rventure.herokuapp.com/api/listing/:id</code></h4>
 <hr/>
-<h4><code> GET---|rventure.herokuapp.com/api/reserve</code></h4>
-<h4><code> GET---|rventure.herokuapp.com/api/reserve/:id</code></h4>
-<h4><code> POST--|rventure.herokuapp.com/api/reserve/:id</code></h4>
-<h4><code>DELETE-|rventure.herokuapp.com/api/reserve/:id</code></h4>
+<h4><code> GET---|https://rventure.herokuapp.com/api/reserve</code></h4>
+<h4><code> GET---|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
+<h4><code> POST--|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
+<h4><code>DELETE-|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
 🚙
 
 
@@ -58,16 +58,16 @@ server.get('/auth', (req, res) => {
   
 <h1>rVenture</h1>
 
-<h2>rventure.herokuapp.com/  ✔ api status</h2>
+<h2>https://rventure.herokuapp.com/  ✔ api status</h2>
 
 <hr>
-<h3>rventure.herokuapp.com/auth 🔐  endpoint documentation📃</h3>
+<h3>https://rventure.herokuapp.com/auth 🔐  endpoint documentation📃</h3>
 
 <br>
-<h4><code> POST--|rventure.herokuapp.com/auth/rv/register</code>🚎</h4>
-<h4><code> POST--|rventure.herokuapp.com/auth/rv/login</code></h4>
-<h4><code> POST--|rventure.herokuapp.com/auth/landowner/register</code></h4
-<h4><code> POST--|rventure.herokuapp.com/auth/landowner/login</code></h4>
+<h4><code> POST--|https://rventure.herokuapp.com/auth/rv/register</code>🚎</h4>
+<h4><code> POST--|https://rventure.herokuapp.com/auth/rv/login</code></h4>
+<h4><code> POST--|https://rventure.herokuapp.com/auth/landowner/register</code></h4
+<h4><code> POST--|https://rventure.herokuapp.com/auth/landowner/login</code></h4>
 <hr>
 🚙
  `)
@@ -77,10 +77,10 @@ server.get('/auth', (req, res) => {
 server.get('/', (req, res) => {
   console.log("!awesome");
   res.send(`<h2>its up amigo</h2><br>
-  <h2>rventure.herokuapp.com/  ✔ api status</h2>
-  <h3>rventure.herokuapp.com/api/ endpoint documentation📃
+  <h2>https://rventure.herokuapp.com/  ✔ api status</h2>
+  <h3>https://rventure.herokuapp.com/api/ endpoint documentation📃
   <hr>
-  <h3>rventure.herokuapp.com/auth 🔐  endpoint documentation📃</h3></h3>`).then(_ => console.log("awesome possum¡"));
+  <h3>https://rventure.herokuapp.com/auth 🔐  endpoint documentation📃</h3></h3>`).then(_ => console.log("awesome possum¡"));
 });
 
 module.exports = server;
