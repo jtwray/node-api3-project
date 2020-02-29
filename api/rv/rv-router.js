@@ -15,7 +15,7 @@ const listing=require('../jsondata/mock.js').listings;
 
 
 router.get('/',(req,res)=>{
-res.status(201).json({listings:listing})
+res.status(200).json({listings:listing})
 });
 
 module.exports=router;

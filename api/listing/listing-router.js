@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
 //hardcode listing by req.params.id
 router.get('/:id', async (req, res) => {
 
-    const singleListing = Listings.filter(listing => listing.listingid == req.params.id);
+    const singleListing = Listings.filter(listing => listing.id == req.params.id);
     res.status(200)
         .json({ singleListing })
 })
@@ -43,7 +43,7 @@ router.post('/', async (req, res) => {
     const newlisting = req.body;
     await Listings.push(req.body);
 
-    res.status(200)
+    res.status(201)
         .json({ "newlisting added": newlisting, "listing.length": Listings.length });
     // }).catch(error => console.error(error),
     //     res.status(500)
@@ -54,10 +54,10 @@ router.post('/', async (req, res) => {
 //hardcode delete listing by req.params.id
 router.delete('/:id', async (req, res) => {
 
-    const singleListing = Listings.filter(listing => listing.listingid == req.params.id);
+    const singleListing = Listings.filter(listing => listing.id == req.params.id);
     var newArray = [];
     Listings.map((l, i) => {
-        l.listingid == Number(req.params.id) ? delete Listings[i] : l
+        l.id == Number(req.params.id) ? delete Listings[i] : l
     })
 
     // const removeProperty = prop => ({ [prop]: _, ...rest }) => rest
@@ -88,8 +88,8 @@ router.delete('/:id', async (req, res) => {
     // var apps = [{id:34,name:'My App',another:'thing'},{id:37,name:'My New App',another:'things'}];
 
     // get index of object with id:37
-    // var removeIndex = Listings.map(function(item) { return item.listingid; }).indexOf(req.params.id);
-    // console.log(Listings.indexOf(listingid==req.params.id))
+    // var removeIndex = Listings.map(function(item) { return item.id; }).indexOf(req.params.id);
+    // console.log(Listings.indexOf(id==req.params.id))
 
     // if( removeIndex == -1 ){ removeIndex = 0 } 
     // remove object
@@ -98,9 +98,9 @@ router.delete('/:id', async (req, res) => {
 
 
     //   const allbut36=Listings.map(listingindex => {
-    //         listingindex.listingid.toString() == req.params.id?listingindex:null,
-    //             console.log("listingindex.listingid:",
-    //                 listingindex.listingid,
+    //         listingindex.id.toString() == req.params.id?listingindex:null,
+    //             console.log("listingindex.id:",
+    //                 listingindex.id,
     //                 "req.params.id:::",
     //                 (req.params.id))
     // //     })
@@ -110,7 +110,7 @@ router.delete('/:id', async (req, res) => {
 
     // console.log("req.params.id::::===-->", req.params.id)
 
-    res.status(200)
+    res.status(204)
         .json({ Listings })
 })
 
