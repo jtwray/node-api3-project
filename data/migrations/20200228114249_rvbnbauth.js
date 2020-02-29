@@ -26,6 +26,7 @@ exports.up = function (knex) {
                 .notNullable()
                 .unique();
             landOwner.string('password', 255).notNullable();
+            landOwner.string('contact', 255).notNullable();
         });
 };
 

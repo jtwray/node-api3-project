@@ -4,18 +4,18 @@ const bcrypt = require(`bcryptjs`);
 const jwt = require (`jsonwebtoken`);
 const secrets = require (`../config/secrets`);
 
-const landOwner = require (`../landOwner/landOwner-model`);
+const {add,findBy,findById} = require (`../landOwner/landOwner-model`);
 
 //CREATE
 
-router.post(`/register/landOwner`, (req, res) => {
+router.post(`/register/`, (req, res) => {
     let landOwner = req.body;
     // console.log(req)
     const hash = bcrypt.hashSync(landOwner.password, 10);
     landOwner.password = hash;
     
 
-    landOwner.add(landOwner)
+    add(landOwner)
     .then(saved => {
         res.status(201).json(saved);
     })
@@ -25,10 +25,10 @@ router.post(`/register/landOwner`, (req, res) => {
     });
 });
 
-router.post(`/login/landOwner`, (req, res) => {
+router.post(`/login/`, (req, res) => {
     let{username, password } = req.body;
 
-    landOwner.findBy({ username })
+    findBy({ username })
     .first()
     .then(landOwner => {
         if (landOwner && bcrypt.compareSync(password, landOwner.password)) {
