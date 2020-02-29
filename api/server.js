@@ -53,10 +53,34 @@ server.get('/api', (req, res) => {
  `)
 
 })
+server.get('/auth', (req, res) => {
+  res.send(`   
+  
+<h1>rVenture</h1>
+
+<h2>herokuapp.com/  ✔ api status</h2>
+
+<hr>
+<h3>herokuapp.com/auth 🔐  endpoint documentation📃</h3>
+
+<br>
+<h4><code> POST--|herokuapp.com/auth/rv/register</code>🚎</h4>
+<h4><code> POST--|herokuapp.com/auth/rv/login</code></h4>
+<h4><code> POST--|herokuapp.com/auth/landowner/register</code></h4
+<h4><code> POST--|herokuapp.com/auth/landowner/login</code></h4>
+<hr>
+🚙
+ `)
+
+})
 
 server.get('/', (req, res) => {
   console.log("!awesome");
-  res.send(`<h2>its up amigo</h2>`).then(_ => console.log("awesome possum¡"));
+  res.send(`<h2>its up amigo</h2><br>
+  <h2>herokuapp.com/  ✔ api status</h2>
+  <h3>herokuapp.com/api/ endpoint documentation📃
+  <hr>
+  <h3>herokuapp.com/auth 🔐  endpoint documentation📃</h3></h3>`).then(_ => console.log("awesome possum¡"));
 });
 
 module.exports = server;
