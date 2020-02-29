@@ -51,22 +51,18 @@ router.get('/', (req, res) => {
 
 // no need to validate the user id here,
 // the endpoint returns 404 if the user is not found
-router.get('/:id', (req, res) => {
-  Users.getById(req.params.id)
-    .then(user => {
-      if (user) {
-        res.status(200).json(user);
-      } else {
-        res.status(404).json({ message: 'There is no user with that id' });
-      }
+router.get('/', (req, res) => {
+  Users.get()
+    .then(users => {
+      res.status(200).json(users);
     })
     .catch(error => {
       // good to see the error during development
-      console.log('GET /api/user/:id Error', error);
+      console.log('GET /api/users Error', error);
 
       res
         .status(500)
-        .json({ error: 'We ran into an error retrieving the user' });
+        .json({ error: 'We ran into an error retrieving the users' });
     });
 });
 
