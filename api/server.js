@@ -23,30 +23,34 @@ server.use('/auth/rv', rvAuth);
 server.use('/api/listing', listingRouter);
 
 server.get('/api', (req, res) => {
-  res.send(`this is hardcoded data. you can get a single listing | all the listings | or get/delete a single listing by id
+  res.send(`   
   
-  herokuapp.com/   check api status
-  herokuapp.com/api/ endpoint docs
+<h1>rVenture</h1>
+
+<h2>herokuapp.com/  ✔ api status</h2>
+
+<hr>
+<h3>herokuapp.com/api/ endpoint documentation📃</h3>
+
+<br>
+<h4><code> POST--|herokuapp.com/auth/rv/register</code>🚎</h4>
+<h4><code> POST--|herokuapp.com/auth/rv/login</code></h4>
+<h4><code> POST--|herokuapp.com/auth/landowner/register</code></h4
+<h4><code> POST--|herokuapp.com/auth/landowner/login</code></h4>
+<hr>
+<h4><code> GET---|herokuapp.com/api/listing</code></h4>
+<h4><code> GET---|herokuapp.com/api/listing/:id</code></h4>
+<h4><code> POST--|herokuapp.com/api/listing/:id</code></h4>
+<h4><code>DELETE-|herokuapp.com/api/listing/:id</code></h4>
+<hr/>
+<h4><code> GET---|herokuapp.com/api/reserve</code></h4>
+<h4><code> GET---|herokuapp.com/api/reserve/:id</code></h4>
+<h4><code> POST--|herokuapp.com/api/reserve/:id</code></h4>
+<h4><code>DELETE-|herokuapp.com/api/reserve/:id</code></h4>
+🚙
 
 
-  POST  |herokuapp.com/auth/rv/register
-  POST  |herokuapp.com/auth/rv/login
-  
-  POST  |herokuapp.com/auth/landowner/register
-  POST  |herokuapp.com/auth/landowner/login
-
-  GET   |herokuapp.com/api/listing
-  GET   |herokuapp.com/api/listing/:id
-  POST  |herokuapp.com/api/listing/:id
-  DELETE|herokuapp.com/api/listing/:id
-
-  GET   |herokuapp.com/api/reserve
-  GET   |herokuapp.com/api/reserve/:id
-  POST  |herokuapp.com/api/reserve/:id
-  DELETE|herokuapp.com/api/reserve/:id
-
-  
-  `)
+ `)
 
 })
 

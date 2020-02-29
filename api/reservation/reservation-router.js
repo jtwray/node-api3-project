@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Trip = require('./reservations/reserve-model.js');
+// const Trip = require('./reservation/reserve-model.js.js');
 
 // return a reserved trip for a matching reservation id 
 //  if userid = a related landowner or rvowner
