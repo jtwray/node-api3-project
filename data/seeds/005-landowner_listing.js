@@ -1,0 +1,116 @@
+
+exports.seed = function (knex) {
+  // Deletes ALL existing entries
+  return knex('landowner_listing').del()
+    .then(function () {
+      // Inserts seed entries
+      return knex('landowner_listing').insert(
+        [{
+          landowner_id: 9,
+          listing_id: 8
+        }, {
+          landowner_id: 19,
+          listing_id: 7
+        }, {
+          landowner_id: 2,
+          listing_id: 1
+        }, {
+          landowner_id: 11,
+          listing_id: 13
+        }, {
+          landowner_id: 11,
+          listing_id: 18
+        }, {
+          landowner_id: 4,
+          listing_id: 11
+        }, {
+          landowner_id: 1,
+          listing_id: 20
+        }, {
+          landowner_id: 15,
+          listing_id: 7
+        }, {
+          landowner_id: 17,
+          listing_id: 9
+        }, {
+          landowner_id: 7,
+          listing_id: 10
+        }, {
+          landowner_id: 9,
+          listing_id: 11
+        }, {
+          landowner_id: 12,
+          listing_id: 7
+        }, {
+          landowner_id: 4,
+          listing_id: 17
+        }, {
+          landowner_id: 7,
+          listing_id: 6
+        }, {
+          landowner_id: 11,
+          listing_id: 1
+        }, {
+          landowner_id: 16,
+          listing_id: 13
+        }, {
+          landowner_id: 15,
+          listing_id: 13
+        }, {
+          landowner_id: 8,
+          listing_id: 12
+        }, {
+          landowner_id: 15,
+          listing_id: 3
+        }, {
+          landowner_id: 1,
+          listing_id: 7
+        }, {
+          landowner_id: 10,
+          listing_id: 1
+        }, {
+          landowner_id: 5,
+          listing_id: 19
+        }, {
+          landowner_id: 12,
+          listing_id: 1
+        }, {
+          landowner_id: 20,
+          listing_id: 15
+        }, {
+          landowner_id: 11,
+          listing_id: 5
+        }, {
+          landowner_id: 17,
+          listing_id: 16
+        }, {
+          landowner_id: 1,
+          listing_id: 9
+        }, {
+          landowner_id: 3,
+          listing_id: 3
+        }, {
+          landowner_id: 6,
+          listing_id: 12
+        }, {
+          landowner_id: 5,
+          listing_id: 18
+        }, {
+          landowner_id: 7,
+          listing_id: 14
+        }, {
+          landowner_id: 17,
+          listing_id: 18
+        }, {
+          landowner_id: 5,
+          listing_id: 16
+        }, {
+          landowner_id: 13,
+          listing_id: 8
+        }, {
+          landowner_id: 12,
+          listing_id: 17
+        }]
+      )
+    })
+}
