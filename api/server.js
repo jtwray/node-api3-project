@@ -14,12 +14,12 @@ const reserveRouter = require('../api/reservation/reservation-router.js');
 
 const server = express();
 
+server.use(express.json());
 server.use(logger);
-server.use(cors);
-server.use(helmet);
+server.use(cors());
+server.use(helmet());
 server.use(morgan('dev'));
 
-server.use(express.json());
 
 server.use('/api/rv', rvRouter);
 server.use('/api/reserve', reserveRouter);
@@ -52,7 +52,7 @@ server.get('/api', (req, res) => {
 <h4><code> GET---|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
 <h4><code> POST--|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
 <h4><code>DELETE-|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
- `)
+`)
 })
 
 server.get('/auth', (req, res) => {
@@ -79,7 +79,7 @@ server.get('/', (req, res) => {
   <h2>https://rventure.herokuapp.com/  ✔ api status</h2>
   <h3>https://rventure.herokuapp.com/api/ endpoint documentation
   <hr>
-  <h3>https://rventure.herokuapp.com/auth   endpoint documentation</h3></h3>`).then(_ => console.log('awesome possum¡'));
+  <h3>https://rventure.herokuapp.com/auth   endpoint documentation</h3></h3>`)
 })
 
 module.exports = server
