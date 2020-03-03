@@ -71,7 +71,6 @@ exports.up = function (knex) {
         .notNullable()
       tbl
         .primary(['rvowner_id', 'listing_id', 'date'])
-
     })
     .createTable('landowner_listing', tbl => {
       tbl
@@ -106,7 +105,6 @@ exports.up = function (knex) {
         .primary(['rvowner_id', 'listing_id'])
     })
 }
-
 exports.down = function (knex) {
   return knex.schema
     .dropTableIfExists('rvownerfav_listing')
@@ -114,5 +112,5 @@ exports.down = function (knex) {
     .dropTableIfExists('reservation')
     .dropTableIfExists('listing')
     .dropTableIfExists('landowner')
-    .dropTableIfExists('rv');
+    .dropTableIfExists('rv')
 }

@@ -146,6 +146,6 @@ exports.seed = function (knex) {
           listingid: 12,
           id: '12,10'
         }]
-      );
-    });
-};
+      )
+    })
+}
