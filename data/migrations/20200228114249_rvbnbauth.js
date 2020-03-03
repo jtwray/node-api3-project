@@ -12,8 +12,7 @@ exports.up = function (knex) {
         .notNullable()
         .unique()
       tbl
-        .integer('contact', 255)
-        .unsigned()
+        .string('contact', 255)
         .notNullable()
       tbl.string('password', 255)
         .notNullable()
@@ -44,8 +43,7 @@ exports.up = function (knex) {
         .string('description', 255)
         .notNullable()
       tbl
-        .integer('price', 255)
-        .unsigned()
+        .string('price', 255)
         .notNullable()
       tbl
         .string('photo', 255)
