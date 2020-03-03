@@ -60,6 +60,8 @@ exports.up = function (knex) {
     })
     .createTable('reservation', tbl => {
       tbl
+        .increments()
+      tbl
         .integer('rvowner_id')
         .unsigned()
         .notNullable()
@@ -83,6 +85,8 @@ exports.up = function (knex) {
     })
     .createTable('landowner_listing', tbl => {
       tbl
+        .increments()
+      tbl
         .integer('landowner_id')
         .unsigned()
         .notNullable()
@@ -102,6 +106,8 @@ exports.up = function (knex) {
         .primary(['landowner_id', 'listing_id'])
     })
     .createTable('rvownerfav_listing', tbl => {
+      tbl
+        .increments()
       tbl
         .integer('rvowner_id')
         .unsigned()
