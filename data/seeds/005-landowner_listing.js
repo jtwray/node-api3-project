@@ -49,7 +49,7 @@ exports.seed = function (knex) {
           listing_id: 6
         }, {
           landowner_id: 11,
-          listing_id: 18
+          listing_id: 1
         }, {
           landowner_id: 16,
           listing_id: 13
