@@ -1,6 +1,6 @@
 
 exports.seed = function (knex) {
-  return knex('reservations').insert(
+  return knex('reservation').insert(
     [{
       rvownerid: 14,
       listingid: 16,

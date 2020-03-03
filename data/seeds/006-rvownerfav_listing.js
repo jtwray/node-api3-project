@@ -1,10 +1,10 @@
 
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('rvownerfav_listing').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert(
+      return knex('rvownerfav_listing').insert(
         [{
           rvownerid: 10,
           listingid: 4,

@@ -1,10 +1,10 @@
 
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('landowner_listings').del()
+  return knex('landowner_listing').del()
     .then(function () {
       // Inserts seed entries
-      return knex('landowner_listings').insert(
+      return knex('landowner_listing').insert(
         [{
           landownerid: 9,
           listingid: 8,

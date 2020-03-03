@@ -1,6 +1,6 @@
 
 exports.seed = function (knex) {
-  return knex('listings').insert([{
+  return knex('listing').insert([{
     id: 1,
     landownerid: 9,
     description: 'harness viral communities',
