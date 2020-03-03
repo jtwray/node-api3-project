@@ -11,7 +11,8 @@ exports.up = function (knex) {
         .string('email', 255)
         .notNullable()
         .unique()
-      tbl.string('password', 255).notNullable()
+      tbl.string('password', 255)
+        .notNullable()
     })
 
     .createTable('landowner', tbl => {
@@ -52,6 +53,8 @@ exports.up = function (knex) {
         .notNullable()
         .references('id')
         .inTable('landowner')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
     })
     .createTable('reservation', tbl => {
       tbl
@@ -60,12 +63,16 @@ exports.up = function (knex) {
         .notNullable()
         .references('id')
         .inTable('rv')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
       tbl
         .integer('listing_id')
         .unsigned()
         .notNullable()
         .references('id')
         .inTable('listing')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
       tbl
         .string('date', 255)
         .notNullable()
@@ -79,12 +86,16 @@ exports.up = function (knex) {
         .notNullable()
         .references('id')
         .inTable('landowner')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
       tbl
         .integer('listing_id')
         .unsigned()
         .notNullable()
         .references('id')
         .inTable('listing')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
       tbl
         .primary(['landowner_id', 'listing_id'])
     })
@@ -95,12 +106,16 @@ exports.up = function (knex) {
         .notNullable()
         .references('id')
         .inTable('rv')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
       tbl
         .integer('listing_id')
         .unsigned()
         .notNullable()
         .references('id')
         .inTable('listing')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
       tbl
         .primary(['rvowner_id', 'listing_id'])
     })
