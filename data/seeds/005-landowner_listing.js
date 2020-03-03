@@ -7,144 +7,109 @@ exports.seed = function (knex) {
       return knex('landowner_listing').insert(
         [{
           landownerid: 9,
-          listingid: 8,
-          id: '9,8'
+          listingid: 8
         }, {
           landownerid: 19,
-          listingid: 7,
-          id: '19,7'
+          listingid: 7
         }, {
           landownerid: 2,
-          listingid: 1,
-          id: '2,1'
+          listingid: 1
         }, {
           landownerid: 11,
-          listingid: 13,
-          id: '11,13'
+          listingid: 13
         }, {
           landownerid: 11,
-          listingid: 18,
-          id: '11,18'
+          listingid: 18
         }, {
           landownerid: 4,
-          listingid: 11,
-          id: '4,11'
+          listingid: 11
         }, {
           landownerid: 1,
-          listingid: 20,
-          id: '1,20'
+          listingid: 20
         }, {
           landownerid: 15,
-          listingid: 7,
-          id: '15,7'
+          listingid: 7
         }, {
           landownerid: 17,
-          listingid: 9,
-          id: '17,9'
+          listingid: 9
         }, {
           landownerid: 7,
-          listingid: 10,
-          id: '7,10'
+          listingid: 10
         }, {
           landownerid: 9,
-          listingid: 11,
-          id: '9,11'
+          listingid: 11
         }, {
           landownerid: 12,
-          listingid: 7,
-          id: '12,7'
+          listingid: 7
         }, {
           landownerid: 4,
-          listingid: 17,
-          id: '4,17'
+          listingid: 17
         }, {
           landownerid: 7,
-          listingid: 6,
-          id: '7,6'
+          listingid: 6
         }, {
           landownerid: 11,
-          listingid: 18,
-          id: '11,18'
+          listingid: 18
         }, {
           landownerid: 16,
-          listingid: 13,
-          id: '16,13'
+          listingid: 13
         }, {
           landownerid: 15,
-          listingid: 13,
-          id: '15,13'
+          listingid: 13
         }, {
           landownerid: 8,
-          listingid: 12,
-          id: '8,12'
+          listingid: 12
         }, {
           landownerid: 15,
-          listingid: 3,
-          id: '15,3'
+          listingid: 3
         }, {
           landownerid: 1,
-          listingid: 7,
-          id: '1,7'
+          listingid: 7
         }, {
           landownerid: 10,
-          listingid: 1,
-          id: '10,1'
+          listingid: 1
         }, {
           landownerid: 5,
-          listingid: 19,
-          id: '5,19'
+          listingid: 19
         }, {
           landownerid: 12,
-          listingid: 1,
-          id: '12,1'
+          listingid: 1
         }, {
           landownerid: 20,
-          listingid: 15,
-          id: '20,15'
+          listingid: 15
         }, {
           landownerid: 11,
-          listingid: 5,
-          id: '11,5'
+          listingid: 5
         }, {
           landownerid: 17,
-          listingid: 16,
-          id: '17,16'
+          listingid: 16
         }, {
           landownerid: 1,
-          listingid: 9,
-          id: '1,9'
+          listingid: 9
         }, {
           landownerid: 3,
-          listingid: 3,
-          id: '3,3'
+          listingid: 3
         }, {
           landownerid: 6,
-          listingid: 12,
-          id: '6,12'
+          listingid: 12
         }, {
           landownerid: 5,
-          listingid: 18,
-          id: '5,18'
+          listingid: 18
         }, {
           landownerid: 7,
-          listingid: 14,
-          id: '7,14'
+          listingid: 14
         }, {
           landownerid: 17,
-          listingid: 18,
-          id: '17,18'
+          listingid: 18
         }, {
           landownerid: 5,
-          listingid: 16,
-          id: '5,16'
+          listingid: 16
         }, {
           landownerid: 13,
-          listingid: 8,
-          id: '13,8'
+          listingid: 8
         }, {
           landownerid: 12,
-          listingid: 17,
-          id: '12,17'
+          listingid: 17
         }]
       )
     })
