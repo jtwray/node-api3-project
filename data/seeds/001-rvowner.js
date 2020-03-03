@@ -44,7 +44,8 @@ exports.seed = function (knex) {
     }, {
       username: 'svalsler8',
       email: 'jlanghorne8@moonfruit.com',
-      password: 'vg448-501-9014'
+      password: 'vg448-501-9014',
+      contact: '803-980-3313'
     }, {
       username: 'ejohnsson9',
       email: 'tpendrick9@pcworld.com',
