@@ -8,14 +8,12 @@
 
 // 4. **RV Owners** can query/filter available listings by location (at a minimum)
 
-
 //      and reserve a spot for their RV for a desired date(s) (web, mobile)
 const router = require('express').Router();
-const listing=require('../jsondata/mock.js').listings;
+const listing = require('../jsondata/mock.js').listings
 
+router.get('/', (req, res) => {
+  res.status(200).json({ listings: listing })
+})
 
-router.get('/',(req,res)=>{
-res.status(200).json({listings:listing})
-});
-
-module.exports=router;
+module.exports = router

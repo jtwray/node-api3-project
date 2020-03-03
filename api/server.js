@@ -1,9 +1,8 @@
 const express = require('express');
+const configMiddleware = require('./configMiddleware')
 
-const logger = require('./logger-middleware.js');
-const cors = require('cors');
-const helmet = require('helmet');
-const morgan = require('morgan');
+const server = express();
+configMiddleware(server)
 
 const rvRouter = require('../api/rv/rv-router.js');
 const rvAuth = require('../api/auth/auth-router-rv.js');
@@ -12,20 +11,12 @@ const landOwnerAuth = require('../api/auth/auth-router-lo.js');
 const listingRouter = require('../api/listing/listing-router.js');
 const reserveRouter = require('../api/reservation/reservation-router.js');
 
-const server = express();
-
-server.use(express.json());
-server.use(logger);
-server.use(cors());
-server.use(helmet());
-server.use(morgan('dev'));
-
-
 server.use('/api/rv', rvRouter);
 server.use('/api/reserve', reserveRouter);
+server.use('/api/listing', listingRouter);
+
 server.use('/auth/landowner', landOwnerAuth);
 server.use('/auth/rv', rvAuth);
-server.use('/api/listing', listingRouter);
 
 server.get('/api', (req, res) => {
   res.send(`   
