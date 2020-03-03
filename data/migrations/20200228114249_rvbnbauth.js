@@ -11,6 +11,10 @@ exports.up = function (knex) {
         .string('email', 255)
         .notNullable()
         .unique()
+      tbl
+        .integer('contact', 255)
+        .unsigned()
+        .notNullable()
       tbl.string('password', 255)
         .notNullable()
     })
