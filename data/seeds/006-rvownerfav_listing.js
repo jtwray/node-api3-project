@@ -6,110 +6,110 @@ exports.seed = function (knex) {
       // Inserts seed entries
       return knex('rvownerfav_listing').insert(
         [{
-          rvownerid: 10,
-          listingid: 4
+          rvowner_id: 10,
+          listing_id: 4
         }, {
-          rvownerid: 19,
-          listingid: 6
+          rvowner_id: 19,
+          listing_id: 6
         }, {
-          rvownerid: 6,
-          listingid: 11
+          rvowner_id: 6,
+          listing_id: 11
         }, {
-          rvownerid: 11,
-          listingid: 10
+          rvowner_id: 11,
+          listing_id: 10
         }, {
-          rvownerid: 10,
-          listingid: 19
+          rvowner_id: 10,
+          listing_id: 19
         }, {
-          rvownerid: 20,
-          listingid: 20
+          rvowner_id: 20,
+          listing_id: 20
         }, {
-          rvownerid: 14,
-          listingid: 7
+          rvowner_id: 14,
+          listing_id: 7
         }, {
-          rvownerid: 3,
-          listingid: 20
+          rvowner_id: 3,
+          listing_id: 20
         }, {
-          rvownerid: 10,
-          listingid: 2
+          rvowner_id: 10,
+          listing_id: 2
         }, {
-          rvownerid: 9,
-          listingid: 14
+          rvowner_id: 9,
+          listing_id: 14
         }, {
-          rvownerid: 12,
-          listingid: 16
+          rvowner_id: 12,
+          listing_id: 16
         }, {
-          rvownerid: 20,
-          listingid: 15
+          rvowner_id: 20,
+          listing_id: 15
         }, {
-          rvownerid: 9,
-          listingid: 6
+          rvowner_id: 9,
+          listing_id: 6
         }, {
-          rvownerid: 9,
-          listingid: 8
+          rvowner_id: 9,
+          listing_id: 8
         }, {
-          rvownerid: 13,
-          listingid: 19
+          rvowner_id: 13,
+          listing_id: 19
         }, {
-          rvownerid: 7,
-          listingid: 7
+          rvowner_id: 7,
+          listing_id: 7
         }, {
-          rvownerid: 11,
-          listingid: 2
+          rvowner_id: 11,
+          listing_id: 2
         }, {
-          rvownerid: 2,
-          listingid: 6
+          rvowner_id: 2,
+          listing_id: 6
         }, {
-          rvownerid: 2,
-          listingid: 11
+          rvowner_id: 2,
+          listing_id: 11
         }, {
-          rvownerid: 6,
-          listingid: 17
+          rvowner_id: 6,
+          listing_id: 17
         }, {
-          rvownerid: 13,
-          listingid: 19
+          rvowner_id: 13,
+          listing_id: 19
         }, {
-          rvownerid: 11,
-          listingid: 4
+          rvowner_id: 11,
+          listing_id: 4
         }, {
-          rvownerid: 18,
-          listingid: 3
+          rvowner_id: 18,
+          listing_id: 3
         }, {
-          rvownerid: 15,
-          listingid: 11
+          rvowner_id: 15,
+          listing_id: 11
         }, {
-          rvownerid: 16,
-          listingid: 3
+          rvowner_id: 16,
+          listing_id: 3
         }, {
-          rvownerid: 10,
-          listingid: 9
+          rvowner_id: 10,
+          listing_id: 9
         }, {
-          rvownerid: 16,
-          listingid: 20
+          rvowner_id: 16,
+          listing_id: 20
         }, {
-          rvownerid: 11,
-          listingid: 11
+          rvowner_id: 11,
+          listing_id: 11
         }, {
-          rvownerid: 9,
-          listingid: 20
+          rvowner_id: 9,
+          listing_id: 20
         }, {
-          rvownerid: 15,
-          listingid: 16
+          rvowner_id: 15,
+          listing_id: 16
         }, {
-          rvownerid: 16,
-          listingid: 4
+          rvowner_id: 16,
+          listing_id: 4
         }, {
-          rvownerid: 15,
-          listingid: 18
+          rvowner_id: 15,
+          listing_id: 18
         }, {
-          rvownerid: 3,
-          listingid: 17
+          rvowner_id: 3,
+          listing_id: 17
         }, {
-          rvownerid: 3,
-          listingid: 4
+          rvowner_id: 3,
+          listing_id: 4
         }, {
-          rvownerid: 10,
-          listingid: 12
+          rvowner_id: 10,
+          listing_id: 12
         }]
       )
     })
