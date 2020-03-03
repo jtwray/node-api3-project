@@ -7,144 +7,109 @@ exports.seed = function (knex) {
       return knex('rvownerfav_listing').insert(
         [{
           rvownerid: 10,
-          listingid: 4,
-          id: '4,10'
+          listingid: 4
         }, {
           rvownerid: 19,
-          listingid: 6,
-          id: '6,19'
+          listingid: 6
         }, {
           rvownerid: 6,
-          listingid: 11,
-          id: '11,6'
+          listingid: 11
         }, {
           rvownerid: 11,
-          listingid: 10,
-          id: '10,11'
+          listingid: 10
         }, {
           rvownerid: 10,
-          listingid: 19,
-          id: '19,10'
+          listingid: 19
         }, {
           rvownerid: 20,
-          listingid: 20,
-          id: '20,20'
+          listingid: 20
         }, {
           rvownerid: 14,
-          listingid: 7,
-          id: '7,14'
+          listingid: 7
         }, {
           rvownerid: 3,
-          listingid: 20,
-          id: '20,3'
+          listingid: 20
         }, {
           rvownerid: 10,
-          listingid: 2,
-          id: '2,10'
+          listingid: 2
         }, {
           rvownerid: 9,
-          listingid: 14,
-          id: '14,9'
+          listingid: 14
         }, {
           rvownerid: 12,
-          listingid: 16,
-          id: '16,12'
+          listingid: 16
         }, {
           rvownerid: 20,
-          listingid: 15,
-          id: '15,20'
+          listingid: 15
         }, {
           rvownerid: 9,
-          listingid: 6,
-          id: '6,9'
+          listingid: 6
         }, {
           rvownerid: 9,
-          listingid: 8,
-          id: '8,9'
+          listingid: 8
         }, {
           rvownerid: 13,
-          listingid: 19,
-          id: '19,13'
+          listingid: 19
         }, {
           rvownerid: 7,
-          listingid: 7,
-          id: '7,7'
+          listingid: 7
         }, {
           rvownerid: 11,
-          listingid: 2,
-          id: '2,11'
+          listingid: 2
         }, {
           rvownerid: 2,
-          listingid: 6,
-          id: '6,2'
+          listingid: 6
         }, {
           rvownerid: 2,
-          listingid: 11,
-          id: '11,2'
+          listingid: 11
         }, {
           rvownerid: 6,
-          listingid: 17,
-          id: '17,6'
+          listingid: 17
         }, {
           rvownerid: 13,
-          listingid: 19,
-          id: '19,13'
+          listingid: 19
         }, {
           rvownerid: 11,
-          listingid: 4,
-          id: '4,11'
+          listingid: 4
         }, {
           rvownerid: 18,
-          listingid: 3,
-          id: '3,18'
+          listingid: 3
         }, {
           rvownerid: 15,
-          listingid: 11,
-          id: '11,15'
+          listingid: 11
         }, {
           rvownerid: 16,
-          listingid: 3,
-          id: '3,16'
+          listingid: 3
         }, {
           rvownerid: 10,
-          listingid: 9,
-          id: '9,10'
+          listingid: 9
         }, {
           rvownerid: 16,
-          listingid: 20,
-          id: '20,16'
+          listingid: 20
         }, {
           rvownerid: 11,
-          listingid: 11,
-          id: '11,11'
+          listingid: 11
         }, {
           rvownerid: 9,
-          listingid: 20,
-          id: '20,9'
+          listingid: 20
         }, {
           rvownerid: 15,
-          listingid: 16,
-          id: '16,15'
+          listingid: 16
         }, {
           rvownerid: 16,
-          listingid: 4,
-          id: '4,16'
+          listingid: 4
         }, {
           rvownerid: 15,
-          listingid: 18,
-          id: '18,15'
+          listingid: 18
         }, {
           rvownerid: 3,
-          listingid: 17,
-          id: '17,3'
+          listingid: 17
         }, {
           rvownerid: 3,
-          listingid: 4,
-          id: '4,3'
+          listingid: 4
         }, {
           rvownerid: 10,
-          listingid: 12,
-          id: '12,10'
+          listingid: 12
         }]
       )
     })
