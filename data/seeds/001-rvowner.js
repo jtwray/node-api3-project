@@ -1,6 +1,6 @@
 
 exports.seed = function (knex) {
-  return knex('rvowner').insert([
+  return knex('rv').insert([
     {
       username: 'bchesher0',
       email: 'cbalme0@hugedomains.com',
