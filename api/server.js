@@ -1,6 +1,9 @@
 const express = require('express');
 
 const logger = require('./logger-middleware.js');
+const cors=require('cors');
+const helmet=require('helmet');
+const morgan=require('morgan');
 
 const rvRouter = require('../api/rv/rv-router.js');
 const rvAuth = require('../api/auth/auth-router-rv.js');
@@ -13,6 +16,10 @@ const reserveRouter = require('../api/reservation/reservation-router.js');
 const server = express();
 
 server.use(logger);
+server.use(cors);
+server.use(helmet);
+server.use(morgan('dev'));
+
 server.use(express.json());
 
 
