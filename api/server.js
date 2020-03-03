@@ -1,9 +1,9 @@
 const express = require('express');
 
 const logger = require('./logger-middleware.js');
-const cors=require('cors');
-const helmet=require('helmet');
-const morgan=require('morgan');
+const cors = require('cors');
+const helmet = require('helmet');
+const morgan = require('morgan');
 
 const rvRouter = require('../api/rv/rv-router.js');
 const rvAuth = require('../api/auth/auth-router-rv.js');
@@ -11,7 +11,6 @@ const landOwnerAuth = require('../api/auth/auth-router-lo.js');
 // const landOwnerRouter = require('../api/landOwner/landOwner-router.js');
 const listingRouter = require('../api/listing/listing-router.js');
 const reserveRouter = require('../api/reservation/reservation-router.js');
-
 
 const server = express();
 
@@ -21,7 +20,6 @@ server.use(helmet);
 server.use(morgan('dev'));
 
 server.use(express.json());
-
 
 server.use('/api/rv', rvRouter);
 server.use('/api/reserve', reserveRouter);
@@ -37,10 +35,10 @@ server.get('/api', (req, res) => {
 <h2>https://rventure.herokuapp.com/  ✔ api status</h2>
 
 <hr>
-<h3>https://rventure.herokuapp.com/api/ endpoint documentation📃</h3>
+<h3>https://rventure.herokuapp.com/api/ endpoint documentation</h3>
 
 <br>
-<h4><code> POST--|https://rventure.herokuapp.com/auth/rv/register</code>🚎</h4>
+<h4><code> POST--|https://rventure.herokuapp.com/auth/rv/register</code></h4>
 <h4><code> POST--|https://rventure.herokuapp.com/auth/rv/login</code></h4>
 <h4><code> POST--|https://rventure.herokuapp.com/auth/landowner/register</code></h4
 <h4><code> POST--|https://rventure.herokuapp.com/auth/landowner/login</code></h4>
@@ -54,12 +52,9 @@ server.get('/api', (req, res) => {
 <h4><code> GET---|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
 <h4><code> POST--|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
 <h4><code>DELETE-|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
-🚙
-
-
  `)
-
 })
+
 server.get('/auth', (req, res) => {
   res.send(`   
   
@@ -68,26 +63,23 @@ server.get('/auth', (req, res) => {
 <h2>https://rventure.herokuapp.com/  ✔ api status</h2>
 
 <hr>
-<h3>https://rventure.herokuapp.com/auth 🔐  endpoint documentation📃</h3>
+<h3>https://rventure.herokuapp.com/auth   endpoint documentation</h3>
 
 <br>
-<h4><code> POST--|https://rventure.herokuapp.com/auth/rv/register</code>🚎</h4>
+<h4><code> POST--|https://rventure.herokuapp.com/auth/rv/register</code></h4>
 <h4><code> POST--|https://rventure.herokuapp.com/auth/rv/login</code></h4>
 <h4><code> POST--|https://rventure.herokuapp.com/auth/landowner/register</code></h4
 <h4><code> POST--|https://rventure.herokuapp.com/auth/landowner/login</code></h4>
-<hr>
-🚙
- `)
-
+<hr> `)
 })
 
 server.get('/', (req, res) => {
-  console.log("!awesome");
+  console.log('!awesome')
   res.send(`<h2>its up amigo</h2><br>
   <h2>https://rventure.herokuapp.com/  ✔ api status</h2>
-  <h3>https://rventure.herokuapp.com/api/ endpoint documentation📃
+  <h3>https://rventure.herokuapp.com/api/ endpoint documentation
   <hr>
-  <h3>https://rventure.herokuapp.com/auth 🔐  endpoint documentation📃</h3></h3>`).then(_ => console.log("awesome possum¡"));
-});
+  <h3>https://rventure.herokuapp.com/auth   endpoint documentation</h3></h3>`).then(_ => console.log('awesome possum¡'));
+})
 
-module.exports = server;
+module.exports = server
