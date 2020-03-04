@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const secrets = require('../config/secrets')
 
-const { add, findBy } = require('../landowner/landowner-model.js')
+const { add, findBy } = require('../landOwner/landOwner-model.js')
 
 //  CREATE
 
