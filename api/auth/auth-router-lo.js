@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const secrets = require('../config/secrets.js')
+const { jwtSecret } = require('../config/secrets.js')
 
 const { add, findBy } = require('../landOwner/landOwner-model.js')
 
@@ -19,7 +19,7 @@ router.post('/register/', (req, res) => {
       res.status(201).json({ id: `${saved.id}`, username: `${saved.username}`, token: `${token} ` });
     })
     .catch(error => {
-      res.status(500).json({ message: 'There was an error while trying to add the user to the database.', error: `---${error}---${console.error(error)}` });
+      res.status(500).json({ message: 'There was an error while trying to add the user to the database.', error: `|| ---${error}--- ||  ##${console.error(error)}##` });
     })
 })
 
@@ -52,7 +52,7 @@ function genToken (landowner) {
     expiresIn: '1d'
   }
 
-  const token = jwt.sign(payload, secrets.jwtSecrets, options)
+  const token = jwt.sign(payload, jwtSecret, options)
   return token
 }
 

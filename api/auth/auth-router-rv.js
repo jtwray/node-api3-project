@@ -1,33 +1,33 @@
 const router = require('express').Router()
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
-const secrets = require('../config/secrets')
+const { jwtSecret } = require('../config/secrets.js')
 
-const rv = require('../rv/rv-model')
+const { add, findBy } = require('../rv/rv-model.js')
 
 // CREATE
 
-router.post('/register/rv', (req, res) => {
+router.post('/register/', (req, res) => {
   const rv = req.body
   // console.log(req)
   const hash = bcrypt.hashSync(rv.password, 7)
   rv.password = hash
 
 
-  rv.add(rv)
+  add(rv)
     .then(saved => {
       const token = genToken(saved);
       res.status(201).json({ id: `${saved.id}`, username: `${saved.username}`, token: `${token} ` });
     })
     .catch(error => {
-      res.status(500).json({ message: 'There was an error while trying to add the user to the database.', error: `---${error}---${console.error(error)}` });
+      res.status(500).json({ message: 'There was an error while trying to add the user to the database.', error: `|| ---${error}--- ||  ##${console.error(error)}##` });
     })
 })
 
-router.post('/login/rv', (req, res) => {
+router.post('/login/', (req, res) => {
   const { username, password } = req.body
 
-  rv.findBy({ username })
+  findBy({ username })
     .first()
     .then(rv => {
       if (rv && bcrypt.compareSync(password, rv.password)) {
@@ -43,7 +43,7 @@ router.post('/login/rv', (req, res) => {
     }).catch(error => { res.status(500).json(error); console.error(error) })
 })
 
-function genToken (rv) {
+function genToken(rv) {
   const payload = {
     rvid: rv.id,
     username: rv.username,
@@ -53,7 +53,7 @@ function genToken (rv) {
     expiresIn: '1d'
   }
 
-  const token = jwt.sign(payload, secrets.jwtSecrets, options)
+  const token = jwt.sign(payload, jwtSecret, options)
   return token
 }
 
