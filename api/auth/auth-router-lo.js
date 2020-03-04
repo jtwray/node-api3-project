@@ -16,6 +16,7 @@ router.post('/register/', unique, (req, res) => {
   landowner.password = hash
 
   add(landowner)
+
     .then(saved => {
       const token = genToken(saved)
       res.status(201).json({ id: `${saved.id}`, username: `${saved.username}`, token: `${token} ` })
