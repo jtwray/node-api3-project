@@ -1,4 +1,5 @@
-const { findBy } = require('../api/landOwner/landOwner-model.js')
+const { findBy } = require('../../api/landOwner/landOwner-model.js')
+
 
 module.exports = (req, res, next) => {
   const { username, email } = req.body
@@ -8,7 +9,7 @@ module.exports = (req, res, next) => {
       if (user.length) {
         console.log('user', user)
         res.status(400).json({
-          message: 'Sorry. That username has been taken. Please choose another.'
+          message: `Sorry. That username: ' ${username} ' has been taken. Please choose another.`
         })
       } else {
         findBy({ email: email })
@@ -16,14 +17,14 @@ module.exports = (req, res, next) => {
             if (user.length) {
               res.status(400).json({
                 message:
-                  'Sorry. That email has been taken. Please choose another.'
+                  `Sorry. That email: ' ${email} ' has been taken. Please choose another.`
               })
             } else next()
           })
           .catch(err =>
             res.status(500).json({
               message:
-                `Sorry. Something went wrong in validating that email is unique.----${console.error(err)}----`,
+                `Sorry. Something went wrong when validating this is a unique email.----${console.error(err)}----`,
               error: err,
               error_mesage: err.message
             })
@@ -33,7 +34,7 @@ module.exports = (req, res, next) => {
     .catch(err =>
       res.status(500).json({
         message:
-          'Sorry. Something went wrong in validating that username is unique.',
+          'Sorry. Something went wrong when validating this is a unique username.',
         error: err,
         error_mesage: err.message
       })

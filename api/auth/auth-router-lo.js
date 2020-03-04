@@ -3,11 +3,13 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const { jwtSecret } = require('../config/secrets.js')
 
+const unique = require('../middleware/uniqueuserMiddleware.js')
+
 const { add, findBy } = require('../landOwner/landOwner-model.js')
 
 //  CREATE
 
-router.post('/register/', (req, res) => {
+router.post('/register/', unique, (req, res) => {
   const landowner = req.body
   // console.log(req)
   const hash = bcrypt.hashSync(landowner.password, 7)
@@ -15,11 +17,11 @@ router.post('/register/', (req, res) => {
 
   add(landowner)
     .then(saved => {
-      const token = genToken(saved);
-      res.status(201).json({ id: `${saved.id}`, username: `${saved.username}`, token: `${token} ` });
+      const token = genToken(saved)
+      res.status(201).json({ id: `${saved.id}`, username: `${saved.username}`, token: `${token} ` })
     })
     .catch(error => {
-      res.status(500).json({ message: 'There was an error while trying to add the user to the database.', error: `|| ---${error}--- ||  ##${console.error(error)}##` });
+      res.status(500).json({ message: 'There was an error while trying to add the user to the database.', error: `|| ---${error}--- ||  ##${console.error(error)}##` })
     })
 })
 

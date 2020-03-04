@@ -3,16 +3,17 @@ const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const { jwtSecret } = require('../config/secrets.js')
 
+const unique = require('../middleware/uniqueuserMiddleware.js')
+
 const { add, findBy } = require('../rv/rv-model.js')
 
 // CREATE
 
-router.post('/register/', (req, res) => {
+router.post('/register/', unique, (req, res) => {
   const rv = req.body
   // console.log(req)
   const hash = bcrypt.hashSync(rv.password, 7)
   rv.password = hash
-
 
   add(rv)
     .then(saved => {
