@@ -6,9 +6,7 @@ exports.up = function (knex) {
       tbl.string('email', 255).unique()
       tbl.string('contact', 255)
       tbl.string('password', 255).notNullable()
-     
     })
-
     .createTable('landowner', tbl => {
       tbl.increments()
       tbl.string('username', 255).notNullable().unique()

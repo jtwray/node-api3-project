@@ -4,18 +4,18 @@ const bcrypt = require(`bcryptjs`);
 const jwt = require (`jsonwebtoken`);
 const secrets = require (`../config/secrets`);
 
-const {add,findBy,findById} = require (`../landOwner/landOwner-model`);
+const {add,findBy,findById} = require (`../landowner/landowner-model`);
 
 //CREATE
 
 router.post(`/register/`, (req, res) => {
-    let landOwner = req.body;
+    let landowner = req.body;
     // console.log(req)
-    const hash = bcrypt.hashSync(landOwner.password, 10);
-    landOwner.password = hash;
+    const hash = bcrypt.hashSync(landowner.password, 10);
+    landowner.password = hash;
     
 
-    add(landOwner)
+    add(landowner)
     .then(saved => {
         res.status(201).json(saved);
     })
@@ -30,11 +30,11 @@ router.post(`/login/`, (req, res) => {
 
     findBy({ username })
     .first()
-    .then(landOwner => {
-        if (landOwner && bcrypt.compareSync(password, landOwner.password)) {
+    .then(landowner => {
+        if (landowner && bcrypt.compareSync(password, landowner.password)) {
 
-            let token = genToken(landOwner);
-            res.status(200).json({ message: `Welcome landOwner ${landOwner.username}!`,
+            let token = genToken(landowner);
+            res.status(200).json({ message: `Welcome landowner ${landowner.username}!`,
         token: token
     });
         } else {
@@ -46,11 +46,11 @@ router.post(`/login/`, (req, res) => {
     });
 });
 
-function genToken(landOwner) {
+function genToken(landowner) {
     const payload = {
-        landOwnerid: landOwner.id,
-        username:landOwner.username,
-        roles: "landOwner"
+        landownerid: landowner.id,
+        username:landowner.username,
+        roles: "landowner"
     };
     const options = {
         expiresIn: `1d`

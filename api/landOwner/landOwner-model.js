@@ -5,20 +5,20 @@ module.exports = {
 };
 
 function find() {
-    return db('landOwner').select('id', 'username', 'password');
+    return db('landowner').select('id', 'username', 'password');
 }
 
 function findBy(filter) {
-    return db('landOwner')  
+    return db('landowner')  
     .where(filter);
 }
 
 function findById(id) {
-    return db('landOwner').where({ id }).first();
+    return db('landowner').where({ id }).first();
 }
 
 async function add(user) {
-    const [id] = await db('landOwner').insert(user);
+    const [id] = await db('landowner').insert(user);
     return findById(id);
 }
 
