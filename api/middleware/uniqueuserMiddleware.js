@@ -1,6 +1,5 @@
 const { findBy } = require('../../api/landOwner/landOwner-model.js')
 
-
 module.exports = (req, res, next) => {
   const { username, email } = req.body
 
@@ -11,7 +10,7 @@ module.exports = (req, res, next) => {
         res.status(400).json({
           message: `Sorry. That username: ' ${username} ' has been taken. Please choose another.`
         })
-      } else next(){/**else {
+      } else next()/** else {
         findBy({ email: email })
           .then(user => {
             if (user.length) {
@@ -29,8 +28,8 @@ module.exports = (req, res, next) => {
               error_mesage: err.message
             })
             )
-          */} 
-      }
+          */
+    }
     )
     .catch(err =>
       res.status(500).json({
