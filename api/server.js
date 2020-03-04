@@ -1,30 +1,31 @@
-const express = require('express');
+const express = require('express')
 const configMiddleware = require('./configMiddleware')
-const server = express();
+const server = express()
 
 configMiddleware(server)
 
 var OG = require('express-metatag')('og')
 server.use(OG([{
   title: 'NODEjs|Express API for -- rVenture:the 5th wheel Airbnb -- a company that connects land owners and 5th wheel / RV owners.',
-  description:`NAME|RV camping Airbnb
+  description: `NAME|RV camping Airbnb
   PITCH|
   5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners.  RV parks are often cramped and in many areas are booked months in advance. Collectively, landowners hold vast swaths of unused land that could be earning them revenue.  By using 5th wheel Airbnb, RV owners get  access to use these previously unknown/unavailable sites, and Landowners get to cash in on otherwise dormant or underutilized land`,
-  image:'https://imgur.com/hpzN3f8'}]
-  ));
-const rvRouter = require('../api/rv/rv-router.js');
-const rvAuth = require('../api/auth/auth-router-rv.js');
-const landownerAuth = require('../api/auth/auth-router-lo.js');
+  image: 'https://imgur.com/hpzN3f8'
+}]
+))
+const rvRouter = require('../api/rv/rv-router.js')
+const rvAuth = require('../api/auth/auth-router-rv.js')
+const landownerAuth = require('../api/auth/auth-router-lo.js')
 // const landownerRouter = require('../api/landowner/landowner-router.js');
-const listingRouter = require('../api/listing/listing-router.js');
-const reserveRouter = require('../api/reservation/reservation-router.js');
+const listingRouter = require('../api/listing/listing-router.js')
+const reserveRouter = require('../api/reservation/reservation-router.js')
 
-server.use('/api/rv', rvRouter);
-server.use('/api/reserve', reserveRouter);
-server.use('/api/listing', listingRouter);
+server.use('/api/rv', rvRouter)
+server.use('/api/reserve', reserveRouter)
+server.use('/api/listing', listingRouter)
 
-server.use('/auth/landowner', landownerAuth);
-server.use('/auth/rv', rvAuth);
+server.use('/auth/landowner', landownerAuth)
+server.use('/auth/rv', rvAuth)
 
 server.get('/api', (req, res) => {
   res.send(`   
@@ -34,9 +35,9 @@ PITCH|
 5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼
 RV parks are often cramped and in many areas are booked months in advance. 📅 
 🏕 Collectively, landowners hold vast swaths of unused land that could be earning them revenue. 
- By using 5th wheel Airbnb, 
+By using 5th wheel Airbnb, 
   - 💑  RV owners get access to use these previously unknown/unavailable sites, 🏞🚌
-   - 💰 and Landowners get to cash-in on otherwise dormant or underutilized land'>
+  - 💰 and Landowners get to cash-in on otherwise dormant or underutilized land'>
 <meta property='og:image' content='https://imgur.com/hpzN3f8'>
 <meta property='og:url' content='https://rventure.herokuapp.com/api'>
 
