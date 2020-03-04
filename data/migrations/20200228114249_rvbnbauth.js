@@ -1,40 +1,20 @@
 exports.up = function (knex) {
   return knex.schema
     .createTable('rv', tbl => {
-      tbl
-        .increments()
-      tbl
-        .string('username', 255)
-        .notNullable()
-        .unique()
-      tbl
-        .string('email', 255)
-        .notNullable()
-        .unique()
-      tbl
-        .string('contact', 255)
-        .notNullable()
-      tbl.string('password', 255)
-        .notNullable()
+      tbl.increments()
+      tbl.string('username', 255).notNullable().unique()
+      tbl.string('email', 255).unique()
+      tbl.string('contact', 255)
+      tbl.string('password', 255).notNullable()
+     
     })
 
     .createTable('landowner', tbl => {
-      tbl
-        .increments()
-      tbl
-        .string('username', 255)
-        .notNullable()
-        .unique()
-      tbl
-        .string('email', 255)
-        .notNullable()
-        .unique()
-      tbl
-        .string('password', 255)
-        .notNullable()
-      tbl
-        .string('contact', 255)
-        .notNullable()
+      tbl.increments()
+      tbl.string('username', 255).notNullable().unique()
+      tbl.string('email', 255).unique()
+      tbl.string('contact', 255)
+      tbl.string('password', 255).notNullable()
     })
     .createTable('listing', tbl => {
       tbl
@@ -47,6 +27,8 @@ exports.up = function (knex) {
         .notNullable()
       tbl
         .string('photo', 255)
+      tbl
+      .string('location',255).notNullable();
       tbl
         .string('amenities', 255)
       tbl

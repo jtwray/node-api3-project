@@ -1,145 +1,171 @@
 
 exports.seed = function (knex) {
   return knex('listing').insert([{
-    id: 1,
-    landowner_id: 9,
-    description: 'harness viral communities',
-    price: '$793.84',
-    photo: 'http://dummyimage.com/149x149.png/ff4444/ffffff',
-    amenities: 'restrooms'
-  }, {
-    id: 2,
-    landowner_id: 8,
-    description: 'matrix end-to-end bandwidth',
-    price: '$686.76',
-    photo: 'http://dummyimage.com/248x212.png/ff4444/ffffff',
-    amenities: 'showers'
-  }, {
-    id: 3,
-    landowner_id: 6,
-    description: 'synthesize B2B applications',
-    price: '$933.11',
-    photo: 'http://dummyimage.com/140x191.jpg/ff4444/ffffff',
-    amenities: 'water'
-  }, {
-    id: 4,
-    landowner_id: 13,
-    description: 'utilize holistic solutions',
-    price: '$81.88',
-    photo: 'http://dummyimage.com/249x177.bmp/5fa2dd/ffffff',
-    amenities: 'wifi'
-  }, {
-    id: 5,
-    landowner_id: 12,
-    description: 'orchestrate wireless mindshare',
-    price: '$764.96',
-    photo: 'http://dummyimage.com/123x113.bmp/cc0000/ffffff',
-    amenities: 'wifi'
-  }, {
-    id: 6,
-    landowner_id: 11,
-    description: 'orchestrate bricks-and-clicks experiences',
-    price: '$891.48',
-    photo: 'http://dummyimage.com/145x167.bmp/5fa2dd/ffffff',
-    amenities: 'water'
-  }, {
-    id: 7,
-    landowner_id: 6,
-    description: 'visualize cross-media ROI',
-    price: '$524.98',
-    photo: 'http://dummyimage.com/115x249.bmp/dddddd/000000',
-    amenities: 'electric'
-  }, {
-    id: 8,
-    landowner_id: 16,
-    description: 'engineer front-end e-services',
-    price: '$160.48',
-    photo: 'http://dummyimage.com/138x241.bmp/5fa2dd/ffffff',
-    amenities: 'water'
-  }, {
-    id: 9,
-    landowner_id: 10,
-    description: 'disintermediate revolutionary portals',
-    price: '$801.99',
-    photo: 'http://dummyimage.com/174x178.png/ff4444/ffffff',
-    amenities: 'wifi'
-  }, {
-    id: 10,
-    landowner_id: 7,
-    description: 'recontextualize web-enabled metrics',
-    price: '$355.14',
-    photo: 'http://dummyimage.com/236x214.png/dddddd/000000',
-    amenities: 'electric'
-  }, {
-    id: 11,
-    landowner_id: 13,
-    description: 'evolve dynamic methodologies',
-    price: '$429.90',
-    photo: 'http://dummyimage.com/194x220.jpg/5fa2dd/ffffff',
-    amenities: 'water'
-  }, {
-    id: 12,
-    landowner_id: 11,
-    description: 'benchmark transparent channels',
-    price: '$961.21',
-    photo: 'http://dummyimage.com/128x108.jpg/cc0000/ffffff',
-    amenities: 'restrooms'
-  }, {
-    id: 13,
-    landowner_id: 9,
-    description: 'deliver extensible markets',
-    price: '$426.17',
-    photo: 'http://dummyimage.com/145x157.jpg/ff4444/ffffff',
-    amenities: 'showers'
-  }, {
-    id: 14,
-    landowner_id: 1,
-    description: 'incubate seamless niches',
-    price: '$759.08',
-    photo: 'http://dummyimage.com/231x169.jpg/cc0000/ffffff',
-    amenities: 'water'
-  }, {
-    id: 15,
-    landowner_id: 7,
-    description: 'facilitate distributed experiences',
-    price: '$764.08',
-    photo: 'http://dummyimage.com/191x109.jpg/5fa2dd/ffffff',
-    amenities: 'water'
-  }, {
-    id: 16,
-    landowner_id: 9,
-    description: 'e-enable B2C supply-chains',
-    price: '$746.34',
-    photo: 'http://dummyimage.com/181x138.jpg/5fa2dd/ffffff',
-    amenities: 'water'
-  }, {
-    id: 17,
-    landowner_id: 12,
-    description: 'syndicate bleeding-edge interfaces',
-    price: '$357.39',
-    photo: 'http://dummyimage.com/250x189.jpg/ff4444/ffffff',
-    amenities: 'restrooms'
-  }, {
-    id: 18,
-    landowner_id: 20,
-    description: 'innovate killer architectures',
-    price: '$78.57',
-    photo: 'http://dummyimage.com/196x187.bmp/5fa2dd/ffffff',
-    amenities: 'electric'
-  }, {
-    id: 19,
-    landowner_id: 13,
-    description: 'optimize back-end synergies',
-    price: '$277.05',
-    photo: 'http://dummyimage.com/106x156.jpg/5fa2dd/ffffff',
-    amenities: 'water'
-  }, {
-    id: 20,
-    landowner_id: 19,
-    description: 'brand frictionless interfaces',
-    price: '$170.02',
-    photo: 'http://dummyimage.com/190x168.png/dddddd/000000',
-    amenities: 'showers'
-  }]
+    [{
+      id: 1,
+      landowner_id: 19,
+      description: 'logistical',
+      price: '$42.80',
+      photo: 'http://dummyimage.com/104x108.jpg/cc0000/ffffff',
+      location: '89094',
+      amenities: 'WiFi'
+    }, {
+      id: 2,
+      landowner_id: 5,
+      description: 'array',
+      price: '$224.39',
+      photo: 'http://dummyimage.com/157x242.jpg/cc0000/ffffff',
+      location: '3830-473"',
+      location: '89094',
+      amenities: 'WiFi'
+    }, {
+      id: 3,
+      landowner_id: 4,
+      description: 'systemic',
+      price: '$276.82',
+      photo: 'http://dummyimage.com/249x212.jpg/dddddd/000000',
+      location: '89094',
+      amenities: 'water'
+    }, {
+      id: 4,
+      landowner_id: 8,
+      description: 'encryption',
+      price: '$43.86',
+      photo: 'http://dummyimage.com/242x230.jpg/dddddd/000000',
+      location: '80560',
+      amenities: 'electricity'
+    }, {
+      id: 5,
+      landowner_id: 10,
+      description: 'definition',
+      price: '$257.42',
+      photo: 'http://dummyimage.com/133x247.jpg/5fa2dd/ffffff',
+      location: '7604',
+      amenities: 'restrooms'
+    }, {
+      id: 6,
+      landowner_id: 10,
+      description: 'Managed',
+      price: '$165.23',
+      photo: 'http://dummyimage.com/131x171.jpg/5fa2dd/ffffff',
+      location: '42082',
+      amenities: 'WiFi'
+    }, {
+      id: 7,
+      landowner_id: 5,
+      description: 'optimal',
+      price: '$201.41',
+      photo: 'http://dummyimage.com/160x135.jpg/dddddd/000000',
+      location: '2860-613"',
+      location: '89094',
+      amenities: 'electricity'
+    }, {
+      id: 8,
+      landowner_id: 6,
+      description: 'non-volatile',
+      price: '$159.90',
+      photo: 'http://dummyimage.com/235x240.jpg/dddddd/000000',
+      location: '309642',
+      amenities: 'restrooms'
+    }, {
+      id: 9,
+      landowner_id: 2,
+      description: 'function',
+      price: '$118.96',
+      photo: 'http://dummyimage.com/227x126.jpg/dddddd/000000',
+      location: '89094',
+      amenities: 'WiFi'
+    }, {
+      id: 10,
+      landowner_id: 12,
+      description: 'Adaptive',
+      price: '$84.71',
+      photo: 'http://dummyimage.com/215x102.jpg/5fa2dd/ffffff',
+      location: '89094',
+      amenities: 'WiFi'
+    }, {
+      id: 11,
+      landowner_id: 6,
+      description: 'concept',
+      price: '$190.80',
+      photo: 'http://dummyimage.com/197x188.jpg/ff4444/ffffff',
+      location: '89094',
+      amenities: 'showers'
+    }, {
+      id: 12,
+      landowner_id: 17,
+      description: 'Reduced',
+      price: '$275.18',
+      photo: 'http://dummyimage.com/233x187.jpg/ff4444/ffffff',
+      location: '2930',
+      amenities: 'electricity'
+    }, {
+      id: 13,
+      landowner_id: 17,
+      description: 'Progressive',
+      price: '$271.88',
+      photo: 'http://dummyimage.com/112x150.jpg/5fa2dd/ffffff',
+      location: '357 09"',
+      location: '89094',
+      amenities: 'water'
+    }, {
+      id: 14,
+      landowner_id: 13,
+      description: 'bifurcated',
+      price: '$54.15',
+      photo: 'http://dummyimage.com/145x218.jpg/ff4444/ffffff',
+      location: '671945',
+      amenities: 'WiFi'
+    }, {
+      id: 15,
+      landowner_id: 12,
+      description: 'synergy',
+      price: '$274.28',
+      photo: 'http://dummyimage.com/186x150.jpg/dddddd/000000',
+      location: '73124',
+      amenities: 'showers'
+    }, {
+      id: 16,
+      landowner_id: 2,
+      description: 'system engine',
+      price: '$76.66',
+      photo: 'http://dummyimage.com/104x158.jpg/5fa2dd/ffffff',
+      location: '591 99"',
+      location: '89094',
+      amenities: 'water'
+    }, {
+      id: 17,
+      landowner_id: 5,
+      description: 'Operative',
+      price: '$299.28',
+      photo: 'http://dummyimage.com/153x202.jpg/5fa2dd/ffffff',
+      location: '2530-254"',
+      location: '89094',
+      amenities: 'water'
+    }, {
+      id: 18,
+      landowner_id: 12,
+      description: 'Optimized',
+      price: '$46.15',
+      photo: 'http://dummyimage.com/182x180.jpg/dddddd/000000',
+      location: '89094',
+      amenities: 'WiFi'
+    }, {
+      id: 19,
+      landowner_id: 12,
+      description: 'solution',
+      price: '$106.11',
+      photo: 'http://dummyimage.com/103x242.jpg/ff4444/ffffff',
+      location: '89094',
+      amenities: 'water'
+    }, {
+      id: 20,
+      landowner_id: 3,
+      description: 'optimizing',
+      price: '$69.28',
+      photo: 'http://dummyimage.com/181x235.jpg/ff4444/ffffff',
+      location: '89094',
+      amenities: 'WiFi'
+    }]
   )
 }
