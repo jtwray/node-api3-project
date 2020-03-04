@@ -1,63 +1,60 @@
-  
-const router = require(`express`).Router();
-const bcrypt = require(`bcryptjs`);
-const jwt = require (`jsonwebtoken`);
-const secrets = require (`../config/secrets`);
+const router = require('express').Router()
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+const secrets = require('../config/secrets')
 
-const rv = require (`../rv/rv-model`);
+const rv = require('../rv/rv-model')
 
-//CREATE
+// CREATE
 
-router.post(`/register/rv`, (req, res) => {
-    let rv = req.body;
-    // console.log(req)
-    const hash = bcrypt.hashSync(rv.password, 10);
-    rv.password = hash;
-    
+router.post('/register/rv', (req, res) => {
+  const rv = req.body
+  // console.log(req)
+  const hash = bcrypt.hashSync(rv.password, 7)
+  rv.password = hash
 
-    rv.add(rv)
+
+  rv.add(rv)
     .then(saved => {
-        res.status(201).json(saved);
+      const token = genToken(saved);
+      res.status(201).json({ id: `${saved.id}`, username: `${saved.username}`, token: `${token} ` });
     })
     .catch(error => {
-        console.log(error)
-        res.status(500).json(error);
-    });
-});
+      res.status(500).json({ message: 'There was an error while trying to add the user to the database.', error: `---${error}---${console.error(error)}` });
+    })
+})
 
-router.post(`/login/rv`, (req, res) => {
-    let{username, password } = req.body;
+router.post('/login/rv', (req, res) => {
+  const { username, password } = req.body
 
-    rv.findBy({ username })
+  rv.findBy({ username })
     .first()
     .then(rv => {
-        if (rv && bcrypt.compareSync(password, rv.password)) {
+      if (rv && bcrypt.compareSync(password, rv.password)) {
+        const token = genToken(rv)
+        res.status(200).json({
+          message: `Welcome rv ${rv.username}!`,
+          token: token,
+          username: username
+        })
+      } else {
+        res.status(401).json({ message: 'Invalid Credentials' })
+      }
+    }).catch(error => { res.status(500).json(error); console.error(error) })
+})
 
-            let token = genToken(rv);
-            res.status(200).json({ message: `Welcome rv ${rv.username}!`,
-        token: token
-    });
-        } else {
-            res.status(401).json({ message: `Invalid Credentials`});
-        }
-    })
-    .catch(error => {
-        res.status(500).json(error);
-    });
-});
+function genToken (rv) {
+  const payload = {
+    rvid: rv.id,
+    username: rv.username,
+    roles: 'rv'
+  }
+  const options = {
+    expiresIn: '1d'
+  }
 
-function genToken(rv) {
-    const payload = {
-        rvid: rv.id,
-        username:rv.username,
-        roles: "rv"
-    };
-    const options = {
-        expiresIn: `1d`
-    };
-
-    const token = jwt.sign(payload, secrets.jwtSecrets, options);
-    return token;
+  const token = jwt.sign(payload, secrets.jwtSecrets, options)
+  return token
 }
 
-module.exports = router;
+module.exports = router
