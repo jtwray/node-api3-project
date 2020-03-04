@@ -28,7 +28,7 @@ exports.up = function (knex) {
       tbl
         .string('photo', 255)
       tbl
-      .string('location',255).notNullable();
+        .string('location',255).notNullable();
       tbl
         .string('amenities', 255)
       tbl

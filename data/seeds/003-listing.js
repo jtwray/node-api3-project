@@ -15,8 +15,8 @@ exports.seed = function (knex) {
       description: 'array',
       price: '$224.39',
       photo: 'http://dummyimage.com/157x242.jpg/cc0000/ffffff',
-      location: '3830-473"',
-      location: '89094',
+      location: '3830-473',
+      
       amenities: 'WiFi'
     }, {
       id: 3,
@@ -56,8 +56,8 @@ exports.seed = function (knex) {
       description: 'optimal',
       price: '$201.41',
       photo: 'http://dummyimage.com/160x135.jpg/dddddd/000000',
-      location: '2860-613"',
-      location: '89094',
+      location: '2860-613',
+     
       amenities: 'electricity'
     }, {
       id: 8,
@@ -105,8 +105,8 @@ exports.seed = function (knex) {
       description: 'Progressive',
       price: '$271.88',
       photo: 'http://dummyimage.com/112x150.jpg/5fa2dd/ffffff',
-      location: '357 09"',
-      location: '89094',
+      location: '357509',
+      
       amenities: 'water'
     }, {
       id: 14,
@@ -114,7 +114,7 @@ exports.seed = function (knex) {
       description: 'bifurcated',
       price: '$54.15',
       photo: 'http://dummyimage.com/145x218.jpg/ff4444/ffffff',
-      location: '671945',
+      location: '67195',
       amenities: 'WiFi'
     }, {
       id: 15,
@@ -131,7 +131,7 @@ exports.seed = function (knex) {
       price: '$76.66',
       photo: 'http://dummyimage.com/104x158.jpg/5fa2dd/ffffff',
       location: '591 99"',
-      location: '89094',
+   
       amenities: 'water'
     }, {
       id: 17,
@@ -140,7 +140,7 @@ exports.seed = function (knex) {
       price: '$299.28',
       photo: 'http://dummyimage.com/153x202.jpg/5fa2dd/ffffff',
       location: '2530-254"',
-      location: '89094',
+   
       amenities: 'water'
     }, {
       id: 18,
