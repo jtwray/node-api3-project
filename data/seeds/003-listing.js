@@ -1,6 +1,6 @@
 
 exports.seed = function (knex) {
-  return knex('listing').insert([{
+  return knex('listing').insert(
     [{
       id: 1,
       landowner_id: 19,
