@@ -19,18 +19,19 @@ module.exports = (req, res, next) => {
                 message:
                   `Sorry. That email: ' ${email} ' has been taken. Please choose another.`
               })
-            }*/} 
+            }
           })
           .catch(err =>
             res.status(500).json({
               message:
-                `Sorry. Something went wrong when validating this is a unique email.----${console.error(err)}----`,
+              `Sorry. Something went wrong when validating this is a unique email.----${console.error(err)}----`,
               error: err,
               error_mesage: err.message
             })
-          )
+            )
+          */} 
       }
-    })
+    )
     .catch(err =>
       res.status(500).json({
         message:
