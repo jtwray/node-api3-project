@@ -18,7 +18,7 @@ exports.up = function (knex) {
       tbl
         .increments()
       tbl
-        .string('description', 255)
+        .text('description', 255)
         .notNullable()
       tbl
         .string('price', 255)

@@ -11,10 +11,6 @@ const router = require('express').Router();
 // })
 // module.exports = router;
 
-
-
-
-
 // //MVP
 // 1. Users can register/create an account as either an **RV Owner** or a **Landowner** (web, mobile)
 // 2. **Landowners** and **RV Owners** can login to the the app. (web, mobile)
