@@ -1,9 +1,10 @@
-const { findBy } = require('../../api/landOwner/landOwner-model.js')
+// const landOwner= require('../../api/landOwner/landOwner-model.js')
+const {findBy}= require('../../api/rv/rv-model.js')
 
-module.exports = (req, res, next) => {
+module.exports =prop=> (req, res, next) => {
   const { username, email } = req.body
 
-  findBy({ username: username })
+  findBy(prop,{ username: username })
     .then(user => {
       if (user.length) {
         console.log('user', user)

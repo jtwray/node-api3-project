@@ -29,8 +29,9 @@ function find () {
   return db('landowner')
 }
 
-function findBy(filter) {
-  return db('landowner')
+function findBy(prop,filter) {
+   let table=prop.toString()
+  return db(table)
     .where(filter)
 }
 

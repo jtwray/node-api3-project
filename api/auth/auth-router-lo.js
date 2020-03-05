@@ -4,19 +4,19 @@ const jwt = require('jsonwebtoken')
 const { jwtSecret } = require('../config/secrets.js')
 
 const unique = require('../middleware/uniqueuserMiddleware.js')
+const checkfor = require('../middleware/checkfor.js')
 
 const { add, findBy } = require('../landOwner/landOwner-model.js')
 
 //  CREATE
 
-router.post('/register/', unique, (req, res) => {
+router.post('/register/',checkfor('username'),checkfor('password'), unique('landowner'), (req, res) => {
   const landowner = req.body
   // console.log(req)
   const hash = bcrypt.hashSync(landowner.password, 7)
   landowner.password = hash
 
   add(landowner)
-
     .then(saved => {
       const token = genToken(saved)
       res.status(201).json({ id: `${saved.id}`, username: `${saved.username}`, token: `${token} ` })
@@ -26,7 +26,7 @@ router.post('/register/', unique, (req, res) => {
     })
 })
 
-router.post('/login/', (req, res) => {
+router.post('/login/',checkfor('username'),checkfor('password'), (req, res) => {
   const { username, password } = req.body
 
   findBy({ username })
