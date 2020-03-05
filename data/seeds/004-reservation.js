@@ -1,5 +1,7 @@
 
 exports.seed = function (knex) {
+   return knex('reservation').del()
+    .then(function () {
   return knex('reservation').insert(
     [{
       rvowner_id: 14,
@@ -141,6 +143,9 @@ exports.seed = function (knex) {
       rvowner_id: 17,
       listing_id: 20,
       date: '6/29/2022'
-    }]
-  )
+      }
+        ]
+      )
+    }
+    )
 }

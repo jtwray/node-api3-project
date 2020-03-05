@@ -39,6 +39,7 @@ exports.up = function (knex) {
         .onDelete('CASCADE')
     })
     .createTable('reservation', tbl => {
+      tbl.increments()
       tbl
         .integer('rvowner_id')
         .unsigned()
@@ -58,8 +59,7 @@ exports.up = function (knex) {
       tbl
         .string('date', 255)
         .notNullable()
-      tbl
-        .primary(['rvowner_id', 'listing_id', 'date'])
+
     })
     .createTable('landowner_listing', tbl => {
 
