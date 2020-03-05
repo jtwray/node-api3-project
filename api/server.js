@@ -1,7 +1,7 @@
 const express = require('express')
 const configMiddleware = require('./configMiddleware')
 const server = express()
-
+server.use(express.json())
 configMiddleware(server)
 
 const rvRouter = require('../api/rv/rv-router.js')

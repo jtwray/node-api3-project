@@ -29,7 +29,7 @@ router.post('/register/',checkfor('username'),checkfor('password'), unique('rv')
 router.post('/login/',checkfor('username'),checkfor('password'), (req, res) => {
   const { username, password } = req.body
 
-  findBy({ username })
+  findBy('rv',{ username })
     .first()
     .then(rv => {
       if (rv && bcrypt.compareSync(password, rv.password)) {
@@ -42,7 +42,7 @@ router.post('/login/',checkfor('username'),checkfor('password'), (req, res) => {
       } else {
         res.status(401).json({ message: 'Invalid Credentials' })
       }
-    }).catch(error => { res.status(500).json(error); console.error(error) })
+    }).catch(error => { res.status(500).json({error}); console.error(error) })
 })
 
 function genToken(rv) {

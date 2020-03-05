@@ -19,7 +19,7 @@ router.post('/register/',checkfor('username'),checkfor('password'), unique('land
   add(landowner)
     .then(saved => {
       const token = genToken(saved)
-      res.status(201).json({ id: `${saved.id}`, username: `${saved.username}`, token: `${token} ` })
+      res.status(201).json({saved,token})
     })
     .catch(error => {
       res.status(500).json({ message: 'There was an error while trying to add the user to the database.', error: `|| ---${error}--- ||  ##${console.error(error)}##` })
@@ -29,7 +29,7 @@ router.post('/register/',checkfor('username'),checkfor('password'), unique('land
 router.post('/login/',checkfor('username'),checkfor('password'), (req, res) => {
   const { username, password } = req.body
 
-  findBy({ username })
+  findBy('landowner',{ username })
     .first()
     .then(landowner => {
       if (landowner && bcrypt.compareSync(password, landowner.password)) {
