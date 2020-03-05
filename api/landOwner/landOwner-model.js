@@ -1,44 +1,12 @@
-// const db = require('../../data/dbConfig.js')
+const db = require('../../data/dbConfig.js')
 
-// module.exports = {
-//   add, find, findBy, findById
-// }
 
-// function find() {
-//   return db('landowner').select('id', 'username', 'password')
-// }
-
-// function findBy(filter) {
-//   return db('landowner')
-//     .where(filter)
-// }
-
-// function findById(id) {
-//   return db('landowner').where({ id }).first()
-
-function findById (id) {
-  console.log(id)
-  return db('landowner')
-    .where('id', id)
-    .first()
-}
-// }
-
-// async function add(user) {
-//   const [id] = await db('landowner').insert(user)
-//   return findById(id)
-// }
-// // async function add(user) {
-// //   let ids = await db('users').insert(user)
-// //   const [id] = ids
-// //   return findById(id)
-
-const db = require('../../data/dbConfig')
 
 // 'landowner' & 'listing'
 
 module.exports = {
   find,
+  findBy,
   findById,
   findTasks,
   // findlandownerlisting,
@@ -61,21 +29,19 @@ function find () {
   return db('landowner')
 }
 
-// function findById (id) {
-//   console.log(id)
-//   return db('landowner')
-//     .where('id', id)
-//     .first()
-// }
+function findBy(filter) {
+  return db('landowner')
+    .where(filter)
+}
 
-// function findlandownerlisting (id) {
-//   return db('listing as rs')
-//     .join('landowner_listing as p_rs', 'rs.id', 'p_rs.listing_id')
-//     .join('landowner as p', 'p_rs.landowner_id', 'p.id')
-//     .select('p_rs.landowner_id', 'p.landowner_name', 'rs.listing_name', 'p.description')
-//     .where('p_rs.landowner_id', id)
-//   // .orderBy('listing_id', 'asc')
-// }
+
+function findById (id) {
+  console.log(id)
+  return db('landowner')
+    .where('id', id)
+    .first()
+}
+
 
 function add (landowner) {
   return db('landowner')
@@ -121,3 +87,46 @@ function remove (id) {
     .del()
     .then(() => findById(id))
 }
+
+
+// function findlandownerlisting (id) {
+//   return db('listing as rs')
+//     .join('landowner_listing as p_rs', 'rs.id', 'p_rs.listing_id')
+//     .join('landowner as p', 'p_rs.landowner_id', 'p.id')
+//     .select('p_rs.landowner_id', 'p.landowner_name', 'rs.listing_name', 'p.description')
+//     .where('p_rs.landowner_id', id)
+//   // .orderBy('listing_id', 'asc')
+// }
+
+// module.exports = {
+//   add, find, findBy, findById
+// }
+
+// function find() {
+//   return db('landowner').select('id', 'username', 'password')
+// }
+
+// function findBy(filter) {
+//   return db('landowner')
+//     .where(filter)
+// }
+
+
+// function findById (id) {
+//   console.log(id)
+//   return db('landowner')
+//     .where('id', id)
+//     .first()
+// }
+// function findById(id) {
+//   return db('landowner').where({ id }).first()
+// }
+
+// async function add(user) {
+//   const [id] = await db('landowner').insert(user,'id')
+//   return findById(id)
+// }
+// // async function add(user) {
+// //   let ids = await db('users').insert(user,'id')
+// //   const [id] = ids
+// //   return findById(id)
