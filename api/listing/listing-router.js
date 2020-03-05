@@ -3,12 +3,12 @@
 // 2. **Landowners** and **RV Owners** can login to the the app. (web, mobile)
 // 3. **Landowners** can create, update and delete listings of their available land. At a minimum, a listing must include the land's location, description, price per day, and a photo. (web, mobile)
 // 4. **RV Owners** can query/filter available listings by location (at a minimum) and reserve a spot for their RV for a desired date(s) (web, mobile)
-
+const db = require("../../data/dbConfig.js")
+const list=require('./listing-model.js')
 
 const router = require('express').Router();
 let Listings = require('../jsondata/mock.js').listings;
-
-
+// npm run server
 /// rv owners need to view listings 
 ///rv owners need to create view update and deleted single reservations for the listings by date availability
 ///rv owners need to  view  and deleted all reservations for the listings by date availability
@@ -49,6 +49,38 @@ router.post('/', async (req, res) => {
     //     res.status(500)
     //         .json({ error: "thatdidnt work my friend" }))
 })
+
+
+router.put('/:id', (req, res) => {
+  list.update(req.params.id, req.body)
+    .then((updatedListing) => {   updatedListing.length==0||undefined?
+   res
+   .status(404)
+   .json({message:"the listing could not be found"})
+   :
+      res.status(200).json({ message: 'Listing updated successfully',updatedListing });
+    })
+    .catch(error => {
+      console.log('PUT /api/user/:id Error', error);
+      res.status(500).json({ error: 'We ran into an error updating the listing' });
+    });
+});
+// router.put("/:id", (req, res) => {
+//     const { id } = req.params;
+//     const changes = req.body;
+// list.update(,req.params.id,changes)
+//    .then(listing=>
+//    listing.length?
+//    res
+//    .status(200)
+//    .json(listing)
+//    :
+//    res
+//    .status(404)
+//    .json({message:"the listing could not be found"}))
+//   .catch(error => { res.status(500).json({error}); console.error(error) })
+// })
+
 
 
 //hardcode delete listing by req.params.id

@@ -46,15 +46,17 @@ By using 5th wheel Airbnb,
 <h4><code> POST--|https://rventure.herokuapp.com/auth/landowner/register</code></h4
 <h4><code> POST--|https://rventure.herokuapp.com/auth/landowner/login</code></h4>
 <hr>
+<h4><code> POST--|https://rventure.herokuapp.com/api/listing</code></h4>
 <h4><code> GET---|https://rventure.herokuapp.com/api/listing</code></h4>
 <h4><code> GET---|https://rventure.herokuapp.com/api/listing/:id</code></h4>
-<h4><code> POST--|https://rventure.herokuapp.com/api/listing/:id</code></h4>
+<h4><code> PUT---|https://rventure.herokuapp.com/api/listing/:id</code></h4>
 <h4><code>DELETE-|https://rventure.herokuapp.com/api/listing/:id</code></h4>
 🚙
 <hr/>
+<h4><code> POST--|https://rventure.herokuapp.com/api/reserve</code></h4>
 <h4><code> GET---|https://rventure.herokuapp.com/api/reserve</code></h4>
 <h4><code> GET---|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
-<h4><code> POST--|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
+<h4><code> PUT---|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
 <h4><code>DELETE-|https://rventure.herokuapp.com/api/reserve/:id</code></h4>
 
 <blockquote class="imgur-embed-pub" lang="en" data-id="hpzN3f8"><a href="//imgur.com/hpzN3f8"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>

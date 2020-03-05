@@ -11,6 +11,7 @@ const { add, findBy } = require('../rv/rv-model.js')
 // CREATE
 
 router.post('/register/',checkfor('username'),checkfor('password'), unique('rv'), (req, res) => {
+
   const rv = req.body
   // console.log(req)
   const hash = bcrypt.hashSync(rv.password, 7)
@@ -37,7 +38,8 @@ router.post('/login/',checkfor('username'),checkfor('password'), (req, res) => {
         res.status(200).json({
           message: `Welcome rv ${rv.username}!`,
           token: token,
-          username: username
+          username: username,
+          id:rv.id
         })
       } else {
         res.status(401).json({ message: 'Invalid Credentials' })
