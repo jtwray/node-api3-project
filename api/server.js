@@ -75,7 +75,7 @@ server.get('/auth', (req, res) => {
   5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼'>
 
   <meta property='og:image' content='https://imgur.com/hpzN3f8'>
-  <meta property='og:url' content='https://rventure.herokuapp.com/api'>
+  <meta property='og:url' content='https://rventure.herokuapp.com/auth'>
   
  
 <h1>rVenture</h1>
@@ -100,7 +100,7 @@ server.get('/', (req, res) => {
   5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼'>
 
   <meta property='og:image' content='https://imgur.com/hpzN3f8'>
-  <meta property='og:url' content='https://rventure.herokuapp.com/api'>
+  <meta property='og:url' content='https://rventure.herokuapp.com/'>
     <h1>rVenture</h1>
     <h2>its up amigo</h2><br>
     <h2>https://rventure.herokuapp.com/      ✔   api status</h2>
