@@ -37,7 +37,8 @@ router.post('/login/',checkfor('username'),checkfor('password'), (req, res) => {
         res.status(200).json({
           message: `Welcome landowner ${landowner.username}!`,
           token: token,
-          username: username
+          username: username,
+          id:rv.id
         })
       } else {
         res.status(401).json({ message: 'Invalid Credentials' })

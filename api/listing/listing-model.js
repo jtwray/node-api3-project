@@ -15,7 +15,7 @@ module.exports = {
   findListingBy,
   remove,
   update,
-  updateListingById,
+  updateListingById
 }
 
 function add (listing) {
@@ -23,6 +23,13 @@ function add (listing) {
     .insert(listing, 'id')
     .then(([id]) => {
       return findById(id)
+    })
+}
+function addReserve (reserve) {
+  return db('reservation')
+    .insert(reserve, 'id')
+    .then(([id]) => {return db('reservation')
+    .where("id",id)
     })
 }
 
@@ -45,8 +52,9 @@ function addTask (task, landowner_id) {
 }
 
 // array of all landowner
-function find () {
-  return db('listing')
+function find (prop) {
+    let table = prop.toString()
+  return db(table)
 }
 
 function findBy(prop,filter) {
@@ -98,8 +106,9 @@ function findReservationsByOwner(id) {
     .orderBy('tasks.id', 'asc')
 }
 
-function remove (id) {
-  return db('listing')
+function remove (prop,id) {
+   let table=prop.toString();
+  return db(table)
     .where("id",id)
     .del()
 }
