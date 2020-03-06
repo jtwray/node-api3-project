@@ -21,9 +21,7 @@ server.use('/auth/rv', rvAuth)
 server.get('/api', (req, res) => {
   res.send(`   
 
-<meta property='og:description' content='NAME|RV camping Airbnb
-PITCH|
-5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼
+<meta property='og:description' content='NAME|RV camping Airbnb PITCH| 5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼
 RV parks are often cramped and in many areas are booked months in advance. 📅 
 🏕 Collectively, landowners hold vast swaths of unused land that could be earning them revenue. 
 By using 5th wheel Airbnb, 
@@ -74,7 +72,7 @@ server.get('/auth', (req, res) => {
   <meta property='og:title' content='NODEjs|Express API for -- rVenture:the 5th wheel Airbnb -- a company that connects land owners and 5th wheel / RV owners.'>
   <meta property='og:description' content='NAME|RV camping Airbnb
   PITCH|
-  5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼>
+  5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼'>
 
   <meta property='og:image' content='https://imgur.com/hpzN3f8'>
   <meta property='og:url' content='https://rventure.herokuapp.com/api'>
@@ -99,7 +97,7 @@ server.get('/', (req, res) => {
   res.send(`  <meta property='og:title' content='NODEjs|Express API for -- rVenture:the 5th wheel Airbnb -- a company that connects land owners and 5th wheel / RV owners.'>
   <meta property='og:description' content='NAME|RV camping Airbnb
   PITCH|
-  5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼>
+  5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼'>
 
   <meta property='og:image' content='https://imgur.com/hpzN3f8'>
   <meta property='og:url' content='https://rventure.herokuapp.com/api'>
