@@ -17,9 +17,13 @@ module.exports = {
 }
 
 function add (listing) {
-  return db(listing)
+  console.log('newlistingmodel:', listing)
+  console.error()
+  return db('listing')
     .insert(listing, 'id')
     .then(([id]) => {
+      console.log('listingid-afterAdd\'s-Findby', id)
+      console.error()
       return findById(id)
     })
 }
