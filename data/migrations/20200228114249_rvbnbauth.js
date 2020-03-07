@@ -21,7 +21,10 @@ exports.up = function (knex) {
       tbl.string('password', 255).notNullable()
     })
     .createTable('listing', tbl => {
-      tbl.increments()
+      tbl
+        .increments()
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE')
       tbl.text('description', 255).notNullable()
       tbl.string('price', 255).notNullable()
       tbl.string('location', 255).notNullable()
@@ -94,7 +97,7 @@ exports.up = function (knex) {
         .onDelete('CASCADE')
       tbl.primary(['rvowner_id', 'listing_id'])
     })
-}
+};
 exports.down = function (knex) {
   return knex.schema
     .dropTableIfExists('rvownerfav_listing')
@@ -103,4 +106,4 @@ exports.down = function (knex) {
     .dropTableIfExists('listing')
     .dropTableIfExists('landowner')
     .dropTableIfExists('rv')
-}
+};

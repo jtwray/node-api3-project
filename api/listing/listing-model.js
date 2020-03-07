@@ -4,52 +4,57 @@ const db = require('../../data/dbConfig.js')
 
 module.exports = {
   add,
+  addReserve,
   addlisting,
-  addTask,
+
   find,
   findBy,
   findById,
   findOwnerListings,
-  findListingBy,
+  findTableBy,
   remove,
   update,
-  updateListingById
+  updateById
 }
 
-function add (listing) {
-  console.log('newlistingmodel:', listing)
+function add (newinsert, tableprop) {
+
+  const table = tableprop.toString()
+  console.log('newlistingmodel:', newinsert)
   console.error()
-  return db('listing')
-    .insert(listing, 'id')
+  return db(table)
+    .insert(newinsert, 'id')
     .then(([id]) => {
       console.log('listingid-afterAdd\'s-Findby', id)
       console.error()
       return findById(id)
     })
 }
-function addReserve (reserve) {
-  return db('reservation')
+function addReserve (reserve, tableprop) {
+  const table = tableprop.toString()
+  return db(table)
     .insert(reserve, 'id')
     .then(([id]) => {
-      return db('reservation').where('id', id)
+      return db(table).where('id', id)
     })
 }
 
-function addlisting (listing, landowner_id) {
-  return db('listing')
-    .insert({ ...listing, landowner_id })
+function addlisting (tableprop, newaddition, landowner_id) {
+  const table = tableprop.toString()
+  return db(table)
+    .insert({ ...newaddition, landowner_id })
     .then(([id]) => {
-      return db('listing').where({ id })
+      return db(table).where({ id })
     })
 }
 
-function addTask (task, landowner_id) {
-  return db('tasks')
-    .insert({ ...task, landowner_id })
-    .then(([id]) => {
-      return db('tasks').where({ id })
-    })
-}
+// function addTask (task, landowner_id) {
+//   return db('tasks')
+//     .insert({ ...task, landowner_id })
+//     .then(([id]) => {
+//       return db('tasks').where({ id })
+//     })
+// }
 
 // array of all landowner
 function find (prop) {
@@ -68,10 +73,12 @@ function findById (id) {
     .where('id', id)
     .first()
 }
-function findListingBy (prop, filter) {
+
+function findTableBy (prop, filter) {
   const table = prop.toString()
-  return db('listing').where('landower_id', filter)
+  return db(table).where('landower_id', filter)
 }
+
 function findOwnerListings (id) {
   return db('landowner')
     .join(
@@ -141,24 +148,35 @@ function remove (prop, id) {
     .del()
 }
 
-function update (id, changes) {
-  return db('listing')
+function update (id, changes, prop) {
+  const table = prop.toString()
+  return db(table)
     .where({ id })
     .update(changes, '*')
 }
 
-function updateListingById (changes, id) {
+function updateById (changes, id, prop) {
+  const table = prop.toString()
   console.log('id', id)
-  let listID = Number(id)
+  const listID = Number(id)
   console.log('listID', listID)
-  return findBy('listing', id).then(r => r.update(changes))
+  return findBy(table, id).then(r => r.update(changes))
   // .then(()=>findBy('listing',id))
 }
 
 // function update (id,changes) {
 //   return
 //      db('listing')
-//       .where("id",id)
+//       .where('id', id)
 //       .update(changes)
 //       .then(() => findBy('listing',id))
+// }
+
+// function update (id, changes, prop) {
+// const table = prop.toString()
+//   return
+//      db(table)
+//       .where("id", id)
+//       .update(changes)
+//       .then(() => findBy(table, id))
 // }
