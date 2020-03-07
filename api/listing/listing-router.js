@@ -80,17 +80,17 @@ router.put("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   list
-    .remove(req.params.id)
+    .remove('listing', req.params.id)
     .then(count => {
       if (count > 0) {
-        res.status(200).json({ message: "The listing has been nuked" });
+        res.status(200).json({ message: "The listing has been nuked" })
       } else {
-        res.status(404).json({ message: "The listing could not be found" });
+        res.status(404).json({ message: "The listing could not be found" })
       }
     })
     .catch(error => {
       // log error to server
-      console.log(error);
+      console.log(error)
       res.status(500).json({
         message: "Error removing the listing"
       });
