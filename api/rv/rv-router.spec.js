@@ -4,7 +4,7 @@ const db = require('../../data/dbConfig');
 
 describe('auth-router', () => {
   beforeEach(async () => {
-    await db('rv').truncate(); //                    -----reset DB before running test-----
+    await db('rv').truncate() //                    -----reset DB before running test-----
   });
   //     //****************************************\\
   //    //----test register/   type|status|data-----\\
@@ -16,13 +16,13 @@ describe('auth-router', () => {
         .post('/auth/register/rv')
         .send({ username: 'bigJohn', password: 'password', email: 't@w.com' });
 
-      expect(newUser.type).toEqual('application/json');
-      expect(newUser.text).toMatch(/.+\..+\..+/); // -----DATA-----post/auth/login/rv
-      expect(newUser.text).toMatch(/'id'/); // -----DATA-----post/auth/login/rv
-      expect(newUser.text).toMatch(/username/); // -----DATA-----post/auth/login/rv
-      expect(newUser.text).toMatch(/token/); // -----DATA-----post/auth/login/rv
-      expect(newUser.status).toBe(201);
-    });
+      expect(newUser.type).toEqual('application/json')
+      expect(newUser.text).toMatch(/.+\..+\..+/) // -----DATA-----post/auth/login/rv
+      expect(newUser.text).toMatch(/'id'/) // -----DATA-----post/auth/login/rv
+      expect(newUser.text).toMatch(/username/) // -----DATA-----post/auth/login/rv
+      expect(newUser.text).toMatch(/token/) // -----DATA-----post/auth/login/rv
+      expect(newUser.status).toBe(201)
+    })
     //    \\----test register/   type|status|data-----  //
     //     \\******************************************//
     //* ***********************************************************************
