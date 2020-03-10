@@ -6,7 +6,6 @@ module.exports = {
   add,
   addReserve,
   addlisting,
-
   find,
   findBy,
   findById,
