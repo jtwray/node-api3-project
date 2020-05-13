@@ -1,63 +1,63 @@
-  
-const router = require(`express`).Router();
-const bcrypt = require(`bcryptjs`);
-const jwt = require (`jsonwebtoken`);
-const secrets = require (`../config/secrets`);
+const router = require('express').Router()
+const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
+const { jwtSecret } = require('../config/secrets.js')
 
-const {add,findBy,findById} = require (`../landOwner/landOwner-model`);
+const unique = require('../middleware/uniqueuserMiddleware.js')
+const checkfor = require('../middleware/checkfor.js')
 
-//CREATE
+const { add, findBy } = require('../landOwner/landOwner-model.js')
 
-router.post(`/register/`, (req, res) => {
-    let landOwner = req.body;
-    // console.log(req)
-    const hash = bcrypt.hashSync(landOwner.password, 10);
-    landOwner.password = hash;
-    
+//  CREATE
 
-    add(landOwner)
+router.post('/register/', checkfor('username'), checkfor('password'), unique('landowner'), (req, res) => {
+  const landowner = req.body
+  // console.log(req)
+  const hash = bcrypt.hashSync(landowner.password, 7)
+  landowner.password = hash
+
+  add(landowner)
     .then(saved => {
-        res.status(201).json(saved);
+      const token = genToken(saved)
+      res.status(201).json({ saved, token })
     })
     .catch(error => {
-        console.log(error)
-        res.status(500).json(error);
-    });
-});
+      res.status(500).json({ message: 'There was an error while trying to add the user to the database.', error: `|| ---${error}--- ||  ##${console.error(error)}##` })
+    })
+})
 
-router.post(`/login/`, (req, res) => {
-    let{username, password } = req.body;
+router.post('/login/', checkfor('username'), checkfor('password'), (req, res) => {
+  const { username, password } = req.body
 
-    findBy({ username })
+  findBy('landowner', { username })
     .first()
-    .then(landOwner => {
-        if (landOwner && bcrypt.compareSync(password, landOwner.password)) {
+    .then(landowner => {
+      if (landowner && bcrypt.compareSync(password, landowner.password)) {
+        const token = genToken(landowner)
+        res.status(200).json({
+          message: `Welcome landowner ${landowner.username}!`,
+          token: token,
+          username: username,
+          id: landowner.id
+        })
+      } else {
+        res.status(401).json({ message: 'Invalid Credentials' })
+      }
+    }).catch(error => { res.status(500).json(error); console.error(error) })
+})
 
-            let token = genToken(landOwner);
-            res.status(200).json({ message: `Welcome landOwner ${landOwner.username}!`,
-        token: token
-    });
-        } else {
-            res.status(401).json({ message: `Invalid Credentials`});
-        }
-    })
-    .catch(error => {
-        res.status(500).json(error);
-    });
-});
+function genToken (landowner) {
+  const payload = {
+    landownerid: landowner.id,
+    username: landowner.username,
+    roles: 'landowner'
+  }
+  const options = {
+    expiresIn: '1d'
+  }
 
-function genToken(landOwner) {
-    const payload = {
-        landOwnerid: landOwner.id,
-        username:landOwner.username,
-        roles: "landOwner"
-    };
-    const options = {
-        expiresIn: `1d`
-    };
-
-    const token = jwt.sign(payload, secrets.jwtSecrets, options);
-    return token;
+  const token = jwt.sign(payload, jwtSecret, options)
+  return token
 }
 
-module.exports = router;
+module.exports = router
