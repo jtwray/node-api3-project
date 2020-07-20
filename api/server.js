@@ -20,6 +20,12 @@ server.use('/auth/rv', rvAuth)
 
 server.get('/api', (req, res) => {
   res.send(` 
+<html>
+<head>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="${title}" />
+<meta name="twitter:description" content="${description}" />
+<meta name="twitter:image" content="${image}" />
 <meta name="description" property='og:description' content='NAME|RV camping Airbnb PITCH| 5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼'>
 <meta name="image" property="og:image"  content='https://i.imgur.com/GXJ8srz.jpg?2'>
 <meta name="title" property="og:title"  content='rVenture'>
@@ -28,7 +34,7 @@ server.get('/api', (req, res) => {
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta property='og:url' content='https://rventure.herokuapp.com/api'>
-<og:title><h1>rVenture</h1></og:title>
+</head><og:title><h1>rVenture</h1></og:title>
 
 <h2>https://rventure.herokuapp.com/  ✔ api status</h2>
 
@@ -66,7 +72,7 @@ By using 5th wheel Airbnb,
   - 💑  RV owners get access to use these previously unknown/unavailable sites, 🏞🚌
   - 💰 and Landowners get to cash-in on otherwise dormant or underutilized land</code></main></og:description>
 <link rel="image_src" href='https://imgur.com/hpzN3f8'>
-`)
+</head>`)
 })
 
 server.get('/auth', (req, res) => {
