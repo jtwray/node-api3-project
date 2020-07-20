@@ -19,6 +19,9 @@ server.use('/auth/landowner', landownerAuth)
 server.use('/auth/rv', rvAuth)
 
 server.get('/api', (req, res) => {
+  let title='rVenture'
+  let image=`https://i.imgur.com/GXJ8srz.jpg?2`
+  let description=`NAME|RV camping Airbnb PITCH| 5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝`
   res.send(` 
 <html>
 <head>
