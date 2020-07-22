@@ -10,48 +10,17 @@ const landownerAuth = require('../api/auth/auth-router-lo.js')
 // const landownerRouter = require('../api/landowner/landowner-router.js');
 const listingRouter = require('../api/listing/listing-router.js')
 const reserveRouter = require('../api/reservation/reservation-router.js')
-
-var _express = require('express');
-
-var _express2 = _interopRequireDefault(_express);
-
-var _xRay = require('x-ray');
-
-var _xRay2 = _interopRequireDefault(_xRay);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var app = (0, _express2.default)(),
-    port = process.env.PORT || 8081,
-    x = (0, _xRay2.default)();
+const twittercard= require('../api/twitter/twittercard-router.js')
 
 
-app.get('/:url(*)', function (req, res) {
-  var url = req.params.url;
 
-  if (req.headers['user-agent'].indexOf('Twitterbot') > -1) {
-    // when twitter calls, show them the card
-    x(url, {
-      title: 'title',
-      text: ['p'],
-      image: 'img@src'
-    })(function (err, obj) {
-      var title = obj.title;
-      var text = obj.text;
-      var image = obj.image;
-      var description = text.join(' ').substring(0, 300);
 
-      res.send('\n        <html>\n          <head>\n            <meta name="twitter:card" content="summary" />\n            <meta name="twitter:title" content="' + title + '" />\n            <meta name="twitter:description" content="' + description + '" />\n            <meta name="twitter:image" content="' + image + '" />\n          </head>\n        </html>\n      ');
-    });
-  } else {
-    res.redirect(url);
-  }
-});
 
-server.use(express.json())
+server.use('/api/twitter', twittercard)
 server.use('/api/rv', rvRouter)
 server.use('/api/reserve', reserveRouter)
 server.use('/api/listing', listingRouter)
+
 
 server.use('/auth/landowner', landownerAuth)
 server.use('/auth/rv', rvAuth)
