@@ -40,7 +40,7 @@ By using 5th wheel Airbnb,
 <html>
 <head>
 <meta name="twitter:card" content=${summary}/>
-<meta name="twitter:title" content=${rVenture}/>
+<meta name="twitter:title" content=${title}/>
 <meta name="twitter:description" content="NAME|RV camping Airbnb PITCH| 5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼" />
 <meta name="twitter:image" content=${image} />
 <meta name="description" property='og:description' content='NAME|RV camping Airbnb PITCH| 5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼'>
@@ -113,7 +113,7 @@ server.get('/', (req, res) => {
   console.log('api:uppp')
   res.send(`
   <title><h1>rVenture</h1></title>
-    <h2>its up amigo</h2><br>
+    <h2>server is up 🆙</h2><br>
     <h2>https://rventure.herokuapp.com/      ✔   api status</h2>
     <h3>https://rventure.herokuapp.com/api/  🚎  endpoint documentation</h3>
     <hr>
