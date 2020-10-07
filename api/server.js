@@ -39,10 +39,10 @@ By using 5th wheel Airbnb,
   res.send(` 
 <html>
 <head>
-<meta name="twitter:card" content=`${summary}`/>
-<meta name="twitter:title" content=`${title}`/>
+<meta name="twitter:card" content=${summary}/>
+<meta name="twitter:title" content=${title}/>
 <meta name="twitter:description" content="NAME|RV camping Airbnb PITCH| 5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼" />
-<meta name="twitter:image" content=`${image}` />
+<meta name="twitter:image" content=${image} />
 <meta name="description" property='og:description' content='NAME|RV camping Airbnb PITCH| 5th wheel Airbnb is a company that connects land owners and 5th wheel / RV owners. 🤝🏼'>
 <meta name="image" property="og:image"  content='https://i.imgur.com/GXJ8srz.jpg?2'>
 <meta name="title" property="og:title"  content='rVenture'>
