@@ -10,13 +10,12 @@ const landownerAuth = require('../api/auth/auth-router-lo.js')
 // const landownerRouter = require('../api/landowner/landowner-router.js');
 const listingRouter = require('../api/listing/listing-router.js')
 const reserveRouter = require('../api/reservation/reservation-router.js')
-const twittercard= require('../api/twitter/twittercard-router.js')
 
 
 
 
 
-server.use('/api/twitter', twittercard)
+
 server.use('/api/rv', rvRouter)
 server.use('/api/reserve', reserveRouter)
 server.use('/api/listing', listingRouter)
